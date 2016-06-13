@@ -1,0 +1,296 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<!-- Head -->
+<head>
+    <title>Kent 'picat' Gruber</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html       { background: #fffffe; }
+        .img-circle { border-radius: 50%; }
+        .img-white-border { border:5px solid #ffffff; }
+        .jumbotron { 
+            margin-bottom: 0 !important; 
+            text-align: 
+            center; 
+        }
+        .main {
+            margin-top: 0px !important;
+            background: #5175e8;
+            background: -webkit-linear-gradient(#5175e8, #6157ea); 
+            background: -o-linear-gradient(#5175e8, #6157ea);
+            background: -moz-linear-gradient(#5175e8, #6157ea);
+            background: linear-gradient(#5175e8, #6157ea);
+            color: #ffffff;
+        }
+        .about { background: #6157ea; color: #ffffff; }
+        .education { 
+            background: #6157ea;
+            background: -webkit-linear-gradient(#6157ea, #ef3d3d);
+            background: -o-linear-gradient(#6157ea, #ef3d3d);
+            background: -moz-linear-gradient(#6157ea, #ef3d3d);
+            background: linear-gradient(#6157ea, #ef3d3d);
+            color: #ffffff;
+        }
+        .gallery { 
+            background: #ef3d3d;
+            background: -webkit-linear-gradient(#ef3d3d, #e6ba21);
+            background: -o-linear-gradient(#ef3d3d, #e6ba21);
+            background: -moz-linear-gradient(#ef3d3d, #e6ba21);
+            background: linear-gradient(#ef3d3d, #e6ba21);
+            color: #ffffff;
+        }
+        .code { 
+            background: #e6ba21;
+            background: -webkit-linear-gradient(#e6ba21, #7bca34);
+            background: -o-linear-gradient(#e6ba21, #7bca34);
+            background: -moz-linear-gradient(#e6ba21, #7bca34);
+            background: linear-gradient(#e6ba21, #7bca34);
+            color: #000000;
+        }
+        .align-middle {
+            margin-top: 15%;
+            margin-bottom: 15%;
+        }
+        .overlay {
+            position:relative;
+            opacity: 0.80;
+            -moz-opacity: 80%;
+            -webkit-opacity: 80%;
+            z-index: 2;
+        }
+        .edu-thumb { 
+            margin-bottom: 35px;
+            -webkit-filter: sepia(100%); 
+            filter: sepia(100%);
+        }
+        .brand
+        {
+            position: absolute;
+            left: calc(50% - 15px);
+            text-align: center;
+            margin: auto;
+        }
+    </style>
+</head>
+<!-- Body -->
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand brand" href="#main">
+                <img alt="Brand" src="img/mini.png">
+            </a>
+        </div>
+      </div>
+    </nav>
+    <!-- Main -->
+    <a id="main" name="main"></a>
+    <div class="jumbotron main">
+        <div class="container align-middle">
+            <img height="200" src="img/inside.png" width="200">
+            <h2>Kent Gruber</h2>
+            <p>Artist <font color="#D75DFA"><b>+</b></font> Hacker</p>
+            <div class="btn-group">
+                <a class="btn btn-default btn-lg" href="#about" role="button"><span aria-hidden="true" class="glyphicon glyphicon-user"></span></a> 
+                <a class="btn btn-default btn-lg" href="#education" role="button"><span aria-hidden="true" class="glyphicon glyphicon-education"></span></a>
+                <a class="btn btn-default btn-lg" href="resume.pdf" role="button"><span aria-hidden="true" class="glyphicon glyphicon-file"></span></a> 
+                <a class="btn btn-default btn-lg" href="#gallery" role="button"><span aria-hidden="true" class="glyphicon glyphicon-picture"></span></a> 
+                <a class="btn btn-default btn-lg" href="#code" role="button"><span aria-hidden="true" class="glyphicon glyphicon-console"></span></a>
+            </div>
+        </div>
+    </div>
+    <!-- About Me -->
+    <a id="about" name="about"></a>
+    <div class="jumbotron about">
+        <div class="container align-middle">
+            <span aria-hidden="true" class="glyphicon glyphicon-user"></span>
+            <h2>ABOUT ME</h2>
+            <img class="img-circle img-white-border" height="200" src="img/me.png" width="200"><br>
+            <h4><i>Hi, I'm Kent!</i></h4><br>
+            <br>
+            <div class="row row-centered">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="item">
+                        <p>I'm a creative enthusiast obsessed with cyber security. I hope to be able to leverage my knowledge of cyber security from an attack and defense perspective; programming
+                        skills; and perhaps even my design background to provide flexible, elegant solutions to problems wherever they may be.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Education & Expierince -->
+        <a id="education" name="education"></a>
+        <div class="jumbotron education">
+            <div class="container align-middle">
+                <span aria-hidden="true" class="glyphicon glyphicon-education"></span>
+                <h2>EDUCATION & EXPIERINCE</h2><br>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-xs-12 edu-thumb">
+                        <img alt="" class="overlay" height="100" src="img/emu_logo.png" width="130">
+                        <h2><b>Eastern Michigan University</b></h2>
+                        <h3><b><font color="#1E080F">Information Assurance Major</font></b></h3>
+                        <h4><b>2013 - Present</b></h4><b><br></b>
+                        <p>I am apart of the Information Assurance program at Eastern Michigan University sponsored by the National Security Agency. Eastern is also partnered with the National Initiative for Cybersecurity Education (NICE) focused on cybersecurity awareness, education, training, and professional development.</p>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-12 edu-thumb">
+                        <b><img alt="" class="overlay" height="100" src="img/wnm.png" width="115"></b>
+                        <h2><b>Web & Moore</b></h2>
+                        <h3><b><font color="#1E080F">Cyber Security Analyst</font></b></h3>
+                        <h4><b>2015 - Present</b></h4><b><br></b>
+                        <p>I manage the linux infrastructure spanning multiple across servers to insure the integrity and security of various content management system instances mostly including Wordpress, Magento and Drupal. I respond to and assess threats as well as perform or write tools to do the various tasks it takes to ensure clients uptime, assess security, author various reports and manage backup solutions for multiple clients.</p>
+                    </div><b><br></b>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-xs-12 edu-thumb">
+                        <img alt="" class="overlay" height="100" src="img/iasa.png" width="85">
+                        <h2><b>IASA</b></h2>
+                        <h3><b><font color="#1E080F">Association Member</font></b></h3>
+                        <h4><b>2015 - Present</b></h4><b><br></b>
+                        <p>Active member of the Information Assurance Student Association at my university. Every friday we practice for competitions, share projects, or have guest speakers from companies like Virta Labs. We sometimes have pizza which is cool. I've presented on multiple occasions on topics including noisy scanners, drone detection, PHP malware deobfuscation, and more.</p><b><br></b>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-12 edu-thumb">
+                        <b><img alt="" class="overlay" height="100" src="img/canvas.png" width="100"></b>
+                        <h2><b>EMU Canvas</b></h2>
+                        <h3><b><font color="#1E080F">Bot Developer</font></b></h3>
+                        <h4><b>2014 - Present</b></h4><b><br></b>
+                        <p>I have been working as a mix between an instructional designer and bot developer providing some of the glue it took to help migrate from my university's old online learning system to Canvas by Instructure. I've written various tools and bots to help with this migration process as well as other bots to parse out existing university online resources.</p>
+                    </div><b><br></b>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-xs-12 edu-thumb">
+                        <img alt="" class="overlay" height="100" src="img/ccdc.png" width="147">
+                        <h2><b>CCDC</b></h2>
+                        <h3><b><font color="#1E080F">Participant</font></b></h3>
+                        <h4><b>2016</b></h4><b><br></b>
+                        <p>As an active Information Assurance Student Association member, I had the opportunity to go out to Davenport University and compete in a Collegiate Cyber Defense Competition where our team was responsible for managing the security and uptime of multiple services and boxes including linux and windows. I was responsible for managing our team's pfsense firewall and two other linux boxes.</p><b><br></b>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-12 edu-thumb">
+                        <b><img alt="" class="overlay" height="100" src="img/ists.png" width="285"></b>
+                        <h2><b>Information Security Talent Search</b></h2>
+                        <h3><b><font color="#1E080F">Participant</font></b></h3>
+                        <h4><b>2016</b></h4><b><br></b>
+                        <p>As an active Information Assurance Student Association member, I had the opportunity to drive out with my team to the Rochester Institute of Technology in NY to compete at the Information Security Talent Search, a college security competition designed and organized by the Security Practices and Research Student Association (SPARSA). Our team was responsible for maintaining the uptime of critical services on our various business infrastructure with applications.</p>
+                    </div><b><br></b>
+                </div>
+            </div>
+        </div>
+    <!-- Gallery -->
+    <a id="gallery" name="gallery"></a>
+    <div class="jumbotron gallery">
+        <div class="container align-middle">
+            <span aria-hidden="true" class="glyphicon glyphicon-picture"></span>
+            <h2><b>GALLERY</b></h2><b><br></b>
+                <div class="row">
+                    <b></b>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <b><a class="thumbnail" href=""><img alt="" class="img-responsive" src="img/gallery-1.png"></a></b>
+                    </div><b></b>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <b><a class="thumbnail" href=""><img alt="" class="img-responsive" src="img/gallery-2.png"></a></b>
+                    </div><b></b>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <b><a class="thumbnail" href=""><img alt="" class="img-responsive" src="img/gallery-3.png"></a></b>
+                    </div><b></b>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <b><a class="thumbnail" href=""><img alt="" class="img-responsive" src="img/gallery-4.png"></a></b>
+                    </div><b></b>
+                    <b></b>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <b><a class="thumbnail" href=""><img alt="" class="img-responsive" src="img/gallery-5.png"></a></b>
+                    </div><b></b>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <b><a class="thumbnail" href=""><img alt="" class="img-responsive" src="img/gallery-6.png"></a></b>
+                    </div><b></b>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <b><a class="thumbnail" href=""><img alt="" class="img-responsive" src="img/gallery-7.png"></a></b>
+                    </div><b></b>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <b><a class="thumbnail" href=""><img alt="" class="img-responsive" src="img/gallery-8.png"></a></b>
+                    </div><b></b>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <b><a class="thumbnail" href="#"><img alt="" class="img-responsive" src="img/gallery-9.png"></a></b>
+                    </div><b></b>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <b><a class="thumbnail" href="#"><img alt="" class="img-responsive" src="img/gallery-10.png"></a></b>
+                    </div><b></b>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <b><a class="thumbnail" href="#"><img alt="" class="img-responsive" src="img/gallery-11.png"></a></b>
+                    </div><b></b>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <b><a class="thumbnail" href="#"><img alt="" class="img-responsive" src="img/gallery-12.png"></a></b>
+                    </div><b></b>
+                    <b></b>
+                </div>
+        </div>
+    </div>
+    <!-- Code -->
+    <a id="code" name="code"></a>
+    <div class="jumbotron code">
+        <b></b>
+        <div class="container align-middle">
+            <b></b>
+            <span aria-hidden="true" class="glyphicon glyphicon-console"></span>
+            <h2><b>CODE & PROJECTS</b></h2>
+            <br><br>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-xs-12">
+                        <a href="https://github.com/picatz/Honey-Cat"><img alt="" class="overlay" height="100" src="img/github-bash.png" width="100"></a>
+                        <h2><b>Honey Cat</b></h2>
+                        <h3>Command Line Application</h3>
+                        <h4><b>#!/usr/bin/env bash</b></h4><b><br></b>
+                        <p>Honey Cat is a simple, easy to use honey pot that sets up what looks like is a service, but is really a honey pot on a user specified port. It is built with with BASH, Net Cat. Lolcat support is also a thing because people need it, obviously.</p><b><br></b>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-12 ">
+                        <a href="https://github.com/picatz/Red-Honey-Cat"><img alt="" class="overlay" height="100" src="img/github-ruby.png" width="100"></a>
+                        <h2><b>Red Honey Cat</b></h2>
+                        <h3>Command Line Application</h3>
+                        <h4><b>#!/usr/bin/env ruby</b></h4><b><br></b>
+                        <p>Red Honey Cat is a simple, easy to use honey pot that sets up what looks like is a service, but is really a honey pot on a user specified port. Originally written in BASH, Red Honey Cat is the Ruby variant I wrote for YoloCon 2016. Rainbow support is also a thing because people need it, obviously.</p>
+                    </div><b><br></b>
+                </div>
+                <br><br>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-xs-12">
+                        <a href="https://github.com/picatz/Wordpress-AIOWPS-Firewall-Captcha-Cracker"><img alt="" class="overlay" height="100" src="img/github-ruby.png" width="100"></a>
+                        <h2><b>Wordpress Captcha Cracker</b></h2>
+                        <h3>Command Line Application</h3>
+                        <h4><b>#!/usr/bin/env ruby</b></h4><b><br></b>
+                        <p>A simple tool that will bypass the Wordpress security plugin AIOWPS ( All In One Wordpress Security & Firewall ) login captcha to act as a proof of concept that word mapping twenty numbers and then even base64 encoding the answer into the login page html is a bad idea for implementing a captcha to stop automation.</p><b><br></b>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-12 ">
+                        <a href="https://github.com/picatz/Rektcha"><img alt="" class="overlay" height="100" src="img/github-bash.png" width="100"></a>
+                        <h2><b>Rektcha</b></h2>
+                        <h3>Command Line Application</h3>
+                        <h4><b>#!/usr/bin/env bash</b></h4><b><br></b>
+                        <p>Rektcha is a simple captcha solving tool that analyzes a given image and solves the captcha for a captcha I found being used online. Supports different useful functions including visuals and custom output for feeding into other workflows.</p>
+                    </div><b><br></b>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-xs-12">
+                        <a href="https://github.com/picatz/Comcast-CLI"><img alt="" class="overlay" height="100" src="img/github-ruby.png" width="100"></a>
+                        <h2><b>Comcast-Cli</b></h2>
+                        <h3>Browser Bot</h3>
+                        <h4><b>#!/usr/bin/env ruby</b></h4><b><br></b>
+                        <p>A browser bot with a command line application to automate comcast router admin panel tasks using default credenetials or custom crednetials. Allows a neat little option to set a new password once you're in. Supports other options like rainbows as well.</p><b><br></b>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-12">
+                        <a href="https://github.com/picatz/Tito-Slack-Bot"><img alt="" class="overlay" height="100" src="img/github-ruby.png" width="100"></a>
+                        <h2><b>Tito Bot</b></h2>
+                        <h3>Slack Bot</h3>
+                        <h4><b>#!/usr/bin/env ruby</b></h4><b><br></b>
+                        <p>A simple slack chat bot to give your team a little bit of Tito love and inspiration. Written in Ruby and updated recently to includes and easy to use command line interface to start the bot including, of course, a rainbow option.</p>
+                    </div><b><br></b>
+                </div>
+        </div>
+    </div>
+</body>
+<!-- Footer -->
+<footer class="footer">
+    <br><br><p>Copyright &copy; Kent Gruber 2016</p>
+    <a href="https://github.com/picatz"><img alt="" class="overlay" height="25" src="img/github-mini.png" width="25"></a>   <a href="https://twitter.com/KentGruber"><img alt="" class="overlay" height="25" src="img/twitter-mini.png" width="25"></a>   <a href="https://dribbble.com/KentGruber"><img alt="" class="overlay" height="25" src="img/dribbble-mini.png" width="25"></a>
+</footer>
+</html>
+<!-- Bye! -->
