@@ -1,90 +1,229 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html>
-	<!-- Head -->
-	<head>
-		<title>Kent 'picat' Gruber</title>
-		<!-- Bootstrap 4! -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-		<!-- Font Awesome CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	</head>
-	<!-- Body -->
-	<body>
-		<div class="container">
-			<div class="jumbotron mt-3 text-center">
-				<h1><strong>Kent Gruber</strong></h1>
-				<p class="lead">Information Security Researcher</p>
-				<a class="btn btn-outline-primary" href="https://twitter.com/KentGruber" role="button"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a>
-				<a class="btn btn-outline-dark" href="https://github.com/picatz" role="button"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
-				<a class="btn btn-outline-success" href="https://medium.com/@KentGruber" role="button"><i class="fa fa-medium" aria-hidden="true"></i> Blog</a>
-				<div class="container text-muted">
-					&nbsp;
-					<h6>Check out my <a href="https://github.com/picatz/picatz.github.io/blob/master/Resume.pdf">résumé</a>!</h6>
-				</div>
-			</div>
-		</div>
-		<div class="container">
-			<h2><i class="fa fa-github-square text-muted" aria-hidden="true"></i> Open Source Projects</h2>
-			&nbsp;			
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">Packetz</h4>					<p class="card-text"> Packet capturing library built with LibPcap.</p>
-					<a href="https://github.com/picatz/packetz" class="btn btn-primary"><i class="fa fa-code" aria-hidden="true"></i> Source Code</a>
-				</div>
-			</div>
-			&nbsp;			
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">Shodanz</h4>
-					<p class="card-text">A modern Ruby gem for Shodan, the world's first search engine for Internet-connected devices.</p>
-					<a href="https://github.com/picatz/shodanz" class="btn btn-primary"><i class="fa fa-code" aria-hidden="true"></i> Source Code</a>
-				</div>
-			</div>
-			&nbsp;			
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">Iptablez</h4>
-					<p class="card-text">A friendly Ruby API to iptables. With a squid for a mascot.</p>
-					<a href="https://github.com/picatz/iptablez" class="btn btn-primary"><i class="fa fa-code" aria-hidden="true"></i> Source Code</a>
-				</div>
-			</div>
-			&nbsp;			
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">Command Lion</h4>
-					<p class="card-text">Command-line application framework for Ruby.</p>
-					<a href="https://github.com/picatz/shodanz" class="btn btn-primary"><i class="fa fa-code" aria-hidden="true"></i> Source Code</a>
-				</div>
-			</div>
-			&nbsp;			
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">Whereisthis</h4>
-					<p class="card-text">A command-line application to help determine the location information from a given ip address or url.</p>
-					<a href="https://github.com/picatz/whereisthis" class="btn btn-primary"><i class="fa fa-code" aria-hidden="true"></i> Source Code</a>
-				</div>
-			</div>
-			&nbsp;			
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">Is Available</h4>
-					<p class="card-text">Simply check if a domain has been registered ( or if it is resolvable ) to determine if it's available.<p>
-					<a href="https://github.com/picatz/is_available" class="btn btn-primary"><i class="fa fa-code" aria-hidden="true"></i> Source Code</a>
-				</div>
-			</div>
-		</div>
-	</body>
-	<!-- Footer -->
-	<footer class="footer">
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-	</footer>
-	&nbsp;			
-	&nbsp;			
-	&nbsp;
-	<br><p class="text-center text-muted">Copyright &copy; Kent Gruber 2017</p>	
+  <head>
+    <title>Kent Gruber</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+  </head>
+
+  <body>
+    <section class="hero is-dark is-fullheight is-bold">
+      <div id="space_particles">
+        <div class="hero-body" style="position: absolute;  width: 100%; height: 100%;">
+          <div class="container is-fluid">
+            <h1 class="title">
+              Kent Gruber
+            </h1>
+            <h2 class="subtitle">
+              Information Security Researcher & Open Source Developer 
+            </h2>
+            <a href="https://github.com/picatz" class="button is-primary is-inverted is-outlined">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              <span>GitHub</span>
+            </a>
+            <a href="https://twitter.com/KentGruber" class="button is-primary is-inverted is-outlined">
+              <span class="icon">
+                <i class="fab fa-twitter"></i>
+              </span>
+              <span>Twitter</span>
+            </a>
+            <a href="https://medium.com/@KentGruber" class="button is-primary is-inverted is-outlined">
+              <span class="icon">
+                <i class="fab fa-medium"></i>
+              </span>
+              <span>Medium</span>
+            </a>
+            <p style="padding-top: 1.5rem">Check out my <a class="has-text-primary" href="https://github.com/picatz/picatz.github.io/blob/master/Resume.pdf"><i class="fas fa-file-alt"></i> <strong>résumé</strong></a>!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container is-fluid">
+        <div class="content">
+          <h1>About Me</h1>
+          <p>I'm an open source developer with a background in information security research, design, and programming. I primarily focus on building applications and libraries for tasks related to network security, malware analysis, threat intelligence and data visualization.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container is-fluid">
+        <div class="content">
+          <h1>Open Source Projects</h1>
+          <p>I love following, starting and contributing to open source projects. You can find them all on <strong><a href="https://github.com/picatz">GitHub</a></strong>!</p>
+        </div>
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title">
+            Shodanz 
+            </p>
+            <div class="card-header-icon pull-right">
+              <a href="https://github.com/picatz/shodanz" class="button">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Source Code</span>
+              </a>
+            </div>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              A modern Ruby gem for <a href="https://www.shodan.io/">Shodan</a>, the world's first search engine for Internet-connected devices.
+            </div>
+            <strong>Install</strong>
+            <br>
+            <code style="background: black; color: greenyellow;">
+              <span style="color:white">$</span> gem install shodanz
+            </code>
+            <br>
+            <br>  
+            <script src="https://gist.github.com/picatz/45e4d8b35a314abd244453d9cc712b65.js"></script>
+          </div>
+        </div>
+        <br>
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title">
+            SubFinder v2 
+            </p>
+            <div class="card-header-icon pull-right">
+              <a href="https://github.com/subfinder/research", class="button">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Source Code</span>
+              </a>
+            </div>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              I've been working on the next version of <a href="https://github.com/subfinder">SubFinder</a>, a subdomain enumeration application written in Go.
+            </div>
+            <strong>Install</strong>
+            <br>
+            <code style="background: black; color: greenyellow;">
+              <span style="color:white">$</span> go get github.com/subfinder/core/subzero
+            </code>
+            <br>
+            <br>  
+            <script src="https://gist.github.com/picatz/82d286bcf5e0cb0956feecb6b1ca6898.js"></script>
+          </div>
+        </div>
+        <br>
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title">
+            iface
+            </p>
+            <div class="card-header-icon pull-right">
+              <a href="https://github.com/picatz/iface" class="button">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Source Code</span>
+              </a>
+            </div>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              Cross-platform network interface command-line utility.
+            </div>
+            <strong>Install</strong>
+            <br>
+            <code style="background: black; color: greenyellow;">
+              <span style="color:white">$</span> go get github.com/picatz/iface
+            </code>
+          </div>
+        </div>
+        <br>
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title">
+            ocr 
+            </p>
+            <div class="card-header-icon pull-right">
+              <a href="https://github.com/picatz/ocr" class="button">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Source Code</span>
+              </a>
+            </div>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              Ocular character recognition command-line utility using <a href="https://github.com/tesseract-ocr/tesseract">tesseract</a>.
+            </div>
+            <strong>Install</strong>
+            <br>
+            <code style="background: black; color: greenyellow;">
+              <span style="color:white">$</span> go get github.com/picatz/ocr
+            </code>
+          </div>
+        </div>
+        <br>
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title">
+              builderJS 
+            </p>
+            <div class="card-header-icon pull-right">
+              <a href="https://codepen.io/anon/pen/Wgogvq" class="button">
+                <span class="icon">
+                  <i class="fab fa-codepen"></i>
+                </span>
+                <span>Live Example</span>
+              </a>
+            </div>
+            <div class="card-header-icon pull-right">
+              <a href="https://github.com/picatz/builderJS" class="button">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Source Code</span>
+              </a>
+            </div>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              Simple, composable user interface builder. 
+            </div>
+            <strong>Install</strong>
+            <br>
+            <code style="background: black; color: greenyellow;">
+              <span style="color:white">$</span> git clone https://github.com/picatz/builderJS
+            </code>
+            <br>
+            <br>  
+            <script src="https://gist.github.com/picatz/670c56e6b995266ace8db3bec5db43e0.js"></script>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+        Made with <strong><span style="color: red">♥</span></strong> by <strong>Kent Gruber</strong>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+
+      particlesJS("space_particles", {"particles":{"number":{"value":160,"density":{"enable":true,"value_area":800}},"color":{"value":"#ffffff"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":1,"random":true,"anim":{"enable":true,"speed":1,"opacity_min":0,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":4,"size_min":0.3,"sync":false}},"line_linked":{"enable":false,"distance":150,"color":"#ffffff","opacity":0.4,"width":1},"move":{"enable":true,"speed":1,"direction":"none","random":true,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":600}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"bubble"},"onclick":{"enable":true,"mode":"repulse"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":250,"size":0,"duration":2,"opacity":0,"speed":3},"repulse":{"distance":400,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
+
+update = function() {
+  requestAnimationFrame(update);
+};
+requestAnimationFrame(update);
+    </script>
+
+  </body>
+
 </html>
-<!-- Bye! -->
