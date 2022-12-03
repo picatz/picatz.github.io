@@ -6,8 +6,8 @@
 </script>
 
 <main>
-	<Hero/>
-	<AboutMe/>
-	<OpenSourceProjects/>
-	<Footer/>
+	<Hero />
+	<AboutMe />
+	<OpenSourceProjects />
+	<Footer />
 </main>

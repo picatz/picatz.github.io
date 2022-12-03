@@ -2,7 +2,7 @@
     <div class="container is-fluid">
       <div class="content">
         <h1>Open Source Projects</h1>
-        <p>I love following, starting and contributing to open source projects. You can find them all on <strong><a href="https://github.com/picatz">GitHub</a></strong>!</p>
+        <p>You can find them all on <strong><a href="https://github.com/picatz">GitHub</a></strong>!</p>
       </div>
       <div class="card">
         <header class="card-header">
@@ -51,7 +51,7 @@
           <strong>Install</strong>
           <br>
           <code style="background: black; color: greenyellow;">
-            <span style="color:white">$</span> go get github.com/picatz/iface
+            <span style="color:white">$</span> go install github.com/picatz/iface@latest
           </code>
         </div>
       </div>
@@ -77,7 +77,7 @@
           <strong>Install</strong>
           <br>
           <code style="background: black; color: greenyellow;">
-            <span style="color:white">$</span> go get github.com/picatz/ocr
+            <span style="color:white">$</span> go install github.com/picatz/ocr@latest
           </code>
         </div>
       </div>
