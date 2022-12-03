@@ -19,8 +19,8 @@ up to date, audited 25 packages in 596ms
 found 0 vulnerabilities
 $ npm run build
 
-> picatz-app@0.0.0 build
-> vite build
+  picatz-app@0.0.0 build
+  vite build
 
 vite v3.2.4 building for production...
 ✓ 10 modules transformed.
@@ -31,8 +31,8 @@ dist/index.html                 2.56 KiB
 dist/assets/index.bac1b708.js   9.61 KiB / gzip: 3.41 KiB
 $ npm run preview
 
-> picatz-app@0.0.0 preview
-> vite preview
+  picatz-app@0.0.0 preview
+  vite preview
 
   ➜  Local:   http://127.0.0.1:4173/
   ➜  Network: use --host to expose
