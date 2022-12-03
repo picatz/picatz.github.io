@@ -1,6 +1,6 @@
 # My Personal Website
 
-(This)[https://picatz.github.io] is a static website built with 
+[This](https://picatz.github.io) is a static website built with 
 [Svelte](https://svelte.dev) and [Vite](https://vitejs.dev). [Deployment](./github/workflows/deploy.yml)
 is handled with GitHub Actions.
 
