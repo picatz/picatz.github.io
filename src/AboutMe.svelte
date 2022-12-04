@@ -1,3 +1,7 @@
+<script>
+  import imgUrl from '../img/me2.png'
+</script>
+
 <section class="section">
   <div class="container is-fluid">
     <div class="content">
@@ -8,6 +12,6 @@
   <br>
   <br>
   <div class="container is-fluid" style="text-align: center;">
-    <img width="30%" src="img/me2.png" style="filter: grayscale(100%); border-radius: 50%;" alt="A picture of Kent Gruber">
+    <img width="30%" src={imgUrl} style="filter: grayscale(100%); border-radius: 50%;" alt="A picture of Kent Gruber">
   </div>
 </section>

@@ -5,6 +5,7 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 export default defineConfig({
   plugins: [svelte()],
   publicDir: 'public',
+  assetsInclude: ['**/me2.png'],
   build: {
     outDir: 'dist',
   }
