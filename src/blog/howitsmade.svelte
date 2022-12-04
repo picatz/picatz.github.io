@@ -18,8 +18,7 @@
 
     <p>
         My blog is built with <a href="https://svelte.dev/">Svelte</a>, a JavaScript framework that compiles to HTML,
-        CSS,
-        and JavaScript.
+        CSS, and JavaScript.
 
         I use GitHub Pages to host the blog, and <a href="https://vitejs.dev/">Vite</a> to build it through
         <a href="https://github.com/features/actions">GitHub Actions</a>. Styling is done
@@ -70,7 +69,7 @@
 
     <br>
 
-    <h2 class="subtitle"><strong>File Strucutre & Routing</strong></h2>
+    <h2 class="subtitle"><strong>File Structure & Routing</strong></h2>
 
     <p>
         Blog posts are added as Svelete <a href="https://svelte.dev/docs#component-format">components</a> to
