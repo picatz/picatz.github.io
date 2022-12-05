@@ -13,6 +13,7 @@
 	let blogPosts = {
 		"example": () => import('./blog/example.svelte'),
 		"howitsmade": () => import('./blog/howitsmade.svelte'),
+		"gossa": () => import('./blog/gossa.svelte'),
 	}
 
 	async function hashchange() {

@@ -18,7 +18,7 @@
 
 
 <pre class="box is-clickable is-clipped" style="background: black;" on:click={copyToClipboard}>
-    <code>{block}</code>
+    <code stye="margin-top: 2rem">{block}</code>
 </pre>
 
 <style>
