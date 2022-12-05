@@ -2,6 +2,7 @@
 	import Hero from './Hero.svelte'
 	import AboutMe from './AboutMe.svelte'
 	import OpenSourceProjects from './OpenSourceProjects.svelte'
+	import BlogPosts from './BlogPosts.svelte'
 	import Footer from './Footer.svelte'
 	import Notification from './Notification.svelte'
 	import { onMount } from 'svelte'
@@ -11,9 +12,16 @@
 	let blogId;
 
 	let blogPosts = {
-		"example": () => import('./blog/example.svelte'),
-		"howitsmade": () => import('./blog/howitsmade.svelte'),
-		"gossa": () => import('./blog/gossa.svelte'),
+		howitsmade: {
+			title: "How it's made",
+			date: "2022-12-04",
+			import: () => import('./blog/howitsmade.svelte')	
+		},
+		gossa: {
+			title: "Go SSA",
+			date: "2022-12-05",
+			import: () => import('./blog/gossa.svelte')	
+		},
 	}
 
 	async function hashchange() {
@@ -25,7 +33,7 @@
 			blogId = path.replace('blog/', '');
 
 			if (blogPosts[blogId]) {
-				blogPost = (await blogPosts[blogId]()).default;
+				blogPost = (await blogPosts[blogId].import()).default;
 				// show warning if blog post is not found
 			} else {
 				blogPost = (await import('./blog/404.svelte')).default;
@@ -50,9 +58,10 @@
 	{#if showblog}
 		<svelte:component this={blogPost}/>
 	{:else}
-		<Notification content='<i class="fas fa-book fa-1x is-grey has-text-white" style="margin-right: 0.5rem;"></i> Check out my first <a href="/#blog/howitsmade"><strong>blog post</strong></a>!'/>
+		<Notification content='<i class="fas fa-book fa-1x is-grey has-text-white" style="margin-right: 0.5rem;"></i> Check out my first <a href="/#blog/howitsmade"><strong>blog post</strong></a> on GitHub!'/>
 		<Hero />
 		<AboutMe />
+		<BlogPosts posts={blogPosts}/>
 		<OpenSourceProjects />
 		<Footer />
 	{/if}

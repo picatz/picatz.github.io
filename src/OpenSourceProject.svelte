@@ -1,9 +1,3 @@
-<!-- 
-    This is the main component for the Open Source Project page.
-    It is responsible for displaying the project's information and
-    the project's contributors.
--->
-
 <script>
     import Command from './Command.svelte';
         
