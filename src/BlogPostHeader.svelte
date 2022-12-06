@@ -21,30 +21,35 @@
     }
 </script>
 
-<div class="content" style="padding-bottom: 5rem">
-    <div class="is-pulled-left">
-        <h1>{formatTitle(title)}</h1>
-        <p>{formatDate(date)}</p>
+<div class="columns is-mobile">
+    <div class="column is-8">
+        <h1 class="title is-2">
+            {formatTitle(title)}
+        </h1>
+        <h2 class="subtitle is-4">
+            {formatDate(date)}
+        </h2>
     </div>
-
-    <div class="is-pulled-right">
-        <a href="/">
-            <button class="button">
-                <p class="is-clickable is-primary">
-                    <span class="icon">
-                        <i class="fas fa-home"></i>
-                    </span>
-                </p>
-            </button>
-        </a>
-        <a href="https://github.com/picatz">
-            <button class="button">
-                <p class="is-clickable is-primary">
-                    <span class="icon">
-                        <i class="fab fa-github"></i>
-                    </span>
-                </p>
-            </button>
-        </a>
+    <div class="column is-4">
+        <div class="buttons is-right">
+            <a href="/">
+                <button class="button">
+                    <p class="is-clickable is-primary">
+                        <span class="icon">
+                            <i class="fas fa-home"></i>
+                        </span>
+                    </p>
+                </button>
+            </a>
+            <a href="https://github.com/picatz">
+                <button class="button">
+                    <p class="is-clickable is-primary">
+                        <span class="icon">
+                            <i class="fab fa-github"></i>
+                        </span>
+                    </p>
+                </button>
+            </a>
+        </div> 
     </div>
 </div>

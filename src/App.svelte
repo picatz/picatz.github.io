@@ -22,6 +22,11 @@
 			date: "2022-12-05",
 			import: () => import('./blog/gossa.svelte')	
 		},
+		rssvite: {
+			title: "Building an RSS Feed with Vite",
+			date: "2022-12-06",
+			import: () => import('./blog/rssvite.svelte')	
+		},
 	}
 
 	async function hashchange() {
@@ -36,7 +41,7 @@
 				blogPost = (await blogPosts[blogId].import()).default;
 				// show warning if blog post is not found
 			} else {
-				blogPost = (await import('./blog/404.svelte')).default;
+				blogPost = (await import('./404.svelte')).default;
 			}
 
 			window.scrollTo(0, 0);

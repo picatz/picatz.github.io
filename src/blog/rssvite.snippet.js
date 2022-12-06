@@ -1,7 +1,3 @@
-import { defineConfig } from 'vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
-
-// Used to store the blog posts for the RSS feed plugin.
 let blogPosts = [];
 
 function rssPlugin() {
@@ -19,9 +15,9 @@ function rssPlugin() {
       if (id.includes('blog/') && id.split('.').pop() === 'svelte') {
         console.info('extracting blog post information from', id);
 
-        let blogID = id?.split('/').pop().split('.')[0];
-        let blogTitle = code?.split('title:')[1].split('}')[0].split(',')[0].replace(/"/g, '').trim();
-        let blogDate = code?.split('date:')[1].split('}')[0].replace(/"/g, '').trim();
+        let blogID = id.split('/').pop().split('.')[0];
+        let blogTitle = code.split('title:')[1].split('}')[0].split(',')[0].replace(/"/g, '').trim();
+        let blogDate = code.split('date:')[1].split('}')[0].replace(/"/g, '').trim();
 
         blogPosts.push({
           id: blogID,
@@ -30,7 +26,6 @@ function rssPlugin() {
         });
       }
       return
-
     },
     buildEnd() {
       console.log("blog posts");
@@ -66,16 +61,3 @@ function rssPlugin() {
     }
   }
 }
-
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [
-    svelte(),
-    rssPlugin()
-  ],
-  publicDir: 'public',
-  assetsInclude: ['**/me2.png'],
-  build: {
-    outDir: 'dist',
-  }
-})

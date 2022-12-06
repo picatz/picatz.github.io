@@ -38,6 +38,11 @@
             <i class="fab fa-medium"></i>
           </span>
         </a>
+        <a href="/rss.xml" class="button is-primary is-inverted is-outlined">
+          <span class="icon">
+            <i class="fas fa-rss"></i>
+          </span>
+        </a>
         <p style="padding-top: 1.5rem">Check out my <a class="has-text-primary"
             href="https://github.com/picatz/picatz.github.io/blob/master/Resume.pdf"><i class="fas fa-file-alt"></i>
             <strong>résumé</strong></a>!</p>

@@ -18,15 +18,6 @@
                   </span>
                 {title}
             </p>
-            <p>
-            </p>
-            <div class="card-header-icon pull-right">
-                <a href="/#blog/{id}" class="button">
-                    <span class="icon">
-                        <i class="fas fa-book"></i>
-                    </span>
-                </a>
-            </div>
         </header>
     </a>
 </div>
