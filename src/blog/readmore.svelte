@@ -16,17 +16,17 @@
     <div class="box">
         <p>
             <i class="fas fa-book fa-1x is-grey has-text-grey" style="margin-right: 0.5rem;"></i>
-            Many blogging platforms have section at the end of the post that says "Read More from X" or "Continue Reading". 
+            Many blogging platforms have section at the end of a post that says "Read More from X" or "Continue Reading". 
             This is a good way to keep your readers engaged and to keep them on your site. This is a short write-up on how I did it.
         </p>
     </div>
 
     <!-- Reference previous post on using Vite to build an RSS feed with a link -->
    <p>
-        Like my <a href="/#blog/rssvite">last post</a> using <a href="https://vitejs.dev/">Vite</a> to build an RSS feed, 
-        I will be using it to build my <strong>Read More</strong> section. This section will be a three panel grid,
-        with the most recent three posts from the blog displayed with a title, date, and a short excerpt. Each panel
-        will link to the full post which linked to the post's <code>id</code> in the URL.
+        Following my <a href="/#blog/howitsmade">first post</a> on using <a href="https://svelte.dev">Svelte</a> to build by blog, 
+        I used it to build a <strong>Read More</strong> section. This section is a three panel grid,
+        with the most recent three posts from my blog displayed with a title, date, and a short excerpt. Each panel
+        will link to the full post using its <code>id</code> in the URL.
     </p>
 
     <br>
