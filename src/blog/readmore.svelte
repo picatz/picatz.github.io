@@ -23,7 +23,7 @@
 
     <!-- Reference previous post on using Vite to build an RSS feed with a link -->
    <p>
-        Following my <a href="/#blog/howitsmade">first post</a> on using <a href="https://svelte.dev">Svelte</a> to build by blog, 
+        Following my <a href="/#blog/howitsmade">first post</a> on using <a href="https://svelte.dev">Svelte</a> to build my blog, 
         I used it to build a <strong>Read More</strong> section. This section is a three panel grid,
         with the most recent three posts from my blog displayed with a title, date, and a short excerpt. Each panel
         will link to the full post using its <code>id</code> in the URL.
