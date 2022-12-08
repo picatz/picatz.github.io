@@ -2,6 +2,9 @@
     import BlogPostHeader from '../BlogPostHeader.svelte'
     import Command from '../Command.svelte'
     import CodeSnippet from '../CodeSnippet.svelte'
+    
+    import ReadMore from '../ReadMore.svelte'
+    import blogPosts from '../posts.js'
 	import Footer from '../Footer.svelte'
 </script>
 
@@ -215,5 +218,5 @@ concurrency:
         </l>
 </section>
 
-
+<ReadMore posts={blogPosts} random="true" exclude='["hostitsmade"]'/>
 <Footer/>

@@ -5,29 +5,12 @@
 	import BlogPosts from './BlogPosts.svelte'
 	import Footer from './Footer.svelte'
 	import Notification from './Notification.svelte'
+	import blogPosts from './posts.js'
 	import { onMount } from 'svelte'
 
 	let showblog = false;
 	let blogPost;
 	let blogId;
-
-	let blogPosts = {
-		howitsmade: {
-			title: "How it's made",
-			date: "2022-12-04",
-			import: () => import('./blog/howitsmade.svelte')	
-		},
-		gossa: {
-			title: "Go SSA",
-			date: "2022-12-05",
-			import: () => import('./blog/gossa.svelte')	
-		},
-		rssvite: {
-			title: "Building an RSS Feed with Vite",
-			date: "2022-12-06",
-			import: () => import('./blog/rssvite.svelte')	
-		},
-	}
 
 	async function hashchange() {
 		const path = window.location.hash.slice(1);

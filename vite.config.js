@@ -29,8 +29,8 @@ function rssPlugin() {
           date: blogDate,
         });
       }
-      return
 
+      return
     },
     buildEnd() {
       console.log("blog posts");

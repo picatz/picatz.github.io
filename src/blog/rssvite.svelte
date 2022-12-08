@@ -1,6 +1,10 @@
 <script>
     import BlogPostHeader from '../BlogPostHeader.svelte'
     import CodeSnippet from '../CodeSnippet.svelte'
+    
+	import Footer from '../Footer.svelte'
+    import ReadMore from '../ReadMore.svelte'
+    import blogPosts from '../posts.js'
 
     import config from './rssvite.snippet.js?raw'
 </script>
@@ -46,3 +50,6 @@
         into individual objects for the feed generated in <code>generateBundle</code>.
     </p>
 </section>
+
+<ReadMore posts={blogPosts} random="true" exclude='["rssvite"]'/>
+<Footer/>
