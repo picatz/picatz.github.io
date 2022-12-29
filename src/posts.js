@@ -25,6 +25,12 @@ let blogPosts = {
         excerpt: "Keeping readers engaged.",
 		import: () => import('./blog/readmore.svelte')
 	},
+	cbor: {
+		title: "CBOR",
+		date: "2022-12-09",
+		excerpt: "Introduction to Concise Binary Object Representation.",
+		import: () => import('./blog/cbor.svelte')
+	},
 }
 
 export default blogPosts;
