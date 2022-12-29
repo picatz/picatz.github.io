@@ -27,7 +27,7 @@ let blogPosts = {
 	},
 	cbor: {
 		title: "CBOR",
-		date: "2022-12-09",
+		date: "2022-12-30",
 		excerpt: "Introduction to Concise Binary Object Representation.",
 		import: () => import('./blog/cbor.svelte')
 	},
