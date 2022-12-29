@@ -9,14 +9,15 @@
 </script>
 
 <section class="section">
-    <BlogPostHeader id="gossa" title="Go SSA" date="2022-12-05" />
+    <BlogPostHeader id='gossa' title="Go SSA" date="2022-12-05" />
 
     <div class="box">
         <p>
             <i class="fas fa-book fa-1x is-grey has-text-grey" style="margin-right: 0.5rem;"></i>
-            <a href="https://en.wikipedia.org/wiki/Static_single-assignment_form">Static Single Assignment</a> (<strong>SSA</strong>) is an <a href="https://en.wikipedia.org/wiki/Intermediate_representation">intermediary representation</a>
-            used by compilers to simplify the analysis of programs. In this representation each variable is
-            assigned only once, which removes the need to track the state of a
+            <a href="https://en.wikipedia.org/wiki/Static_single-assignment_form">Static Single Assignment</a> 
+            (<strong>SSA</strong>) is an <a href="https://en.wikipedia.org/wiki/Intermediate_representation">intermediary representation</a>
+            used by compilers to simplify source code analysis. In this representation each variable is
+            assigned <i>only once</i>, which removes the need to track the state of a
             variable over time. This is how SSA can be used to analyze <a href="https://go.dev">Go</a> programs.
         </p>
     </div>
@@ -32,15 +33,15 @@
 
    <p>
     An interesting aspect about SSA is that it is actually a <a href="https://en.wikipedia.org/wiki/Graph_theory">graph</a>. 
-    Each node in the graph can either be a <code>ssa.Value</code>, an <code>ssa.Instruction</code>, or both.
-    The contents of a node can be inspected, including its type information or the values it uses or references.
+    Each node in the graph can either be a <code><a href="https://pkg.go.dev/golang.org/x/tools/go/ssa#Value">ssa.Value</a></code>, <code><a href="https://pkg.go.dev/golang.org/x/tools/go/ssa#Instruction">ssa.Instruction</a></code>, or both.
+    The contents of a node can be inspected, including its type information, or the other values it uses.
     </p>
 
     
     <br>
 
     <p>
-        To make this idea more concrete, let's look at the following code snippet for a <a href="https://golang.org/ref/spec#Function_declarations">function declaration</a> 
+        To make this idea more concrete, let's look at the following snippet for a <a href="https://golang.org/ref/spec#Function_declarations">function declaration</a> 
         named <code>add</code>:
     </p>
 
@@ -53,9 +54,9 @@
     "/>
 
     <p>
-        The function takes two function arguments, <code>a</code> and <code>b</code> of type <code>int</code>.
-        It returns a value of type <code>int</code>. The function body is a single <a href="https://golang.org/ref/spec#Return_statements">return statement</a>,
-        which returns the sum of <code>a</code> and <code>b</code>.
+        The function takes two arguments, <code>a</code> and <code>b</code> of type <code><a href="https://pkg.go.dev/builtin#int">int</a></code>.
+        It also returns a value of type <code>int</code>. The function body is a single <a href="https://golang.org/ref/spec#Return_statements">return statement</a> for the sum of <code>a</code> and <code>b</code>,
+        an <code><a href="https://pkg.go.dev/golang.org/x/tools/go/ssa#Return">ssa.Return</a></code> instruction.
     </p>
 
     <br>
@@ -69,8 +70,6 @@
     <br>
 
     <CodeSnippet lang="go" class="is-clipped" block="
-    add
-
     0: entry
         a = Arg[0] (a int)
         b = Arg[1] (b int)
@@ -79,27 +78,37 @@
         t2 = t0 + t1 (int)
         t3 = *t2 (int)
         return t3
+
+    ----
+    
+    func add(a int, b int) int:
+    0:                                                                entry P:0 S:0
+            t0 = a + b                                                          int
+            return t0
     "/>
 
-    <br>
-
+    
+    <div class="box">
+        <p>
+            <i class="fas fa-info-circle fa-1x is-grey has-text-grey" style="margin-right: 0.5rem;"></i>
+            Use the <code><a href="https://pkg.go.dev/golang.org/x/tools/cmd/ssadump">ssadump</a></code> CLI
+            tool to view the SSA value graph for any Go program.
+        </p>
+    </div>
+    
     <p>
-        The first <code>ssa.BasicBlock</code> object in the graph is the entry block (<code>0</code>). The entry block is
-        the first block to be executed when the function is called. 
+        Starting at the top, <code>0</code> is the <i>entry block</i> of the function, an <code><a href="https://pkg.go.dev/golang.org/x/tools/go/ssa#BasicBlock">ssa.BasicBlock</a></code>
+        executed when the function is called.
     </p>
-
-
 
     <br>
 
     <p>
         In this case, the entry block starts with two
-        <code>ssa.Instruction</code> objects. The first <code>ssa.Instruction</code> object is an <code>ssa.Store</code>
-        object which stores the value of the first function argument (<code>a</code>) into a variable named <code>t0</code>.
-        The second <code>ssa.Instruction</code> object is another <code>ssa.Store</code> object which stores the value of
-        the second function argument (<code>b</code>) into a variable named <code>t1</code>. The <code>ssa.Store</code>
-        object is a <a href="https://golang.org/ref/spec#Assignments">assignment</a> statement. This is the first and second
-        <code>ssa.Value</code> objects in the graph. 
+        <code><a href="https://pkg.go.dev/golang.org/x/tools/go/ssa#Instruction">ssa.Instruction</a></code> objects. Both are
+        <code><a href="https://pkg.go.dev/golang.org/x/tools/go/ssa#Store">ssa.Store</a></code> instructions to
+        store the value of the first function argument (<code>a</code>) into a variable named <code>t0</code>,
+        and the second function argument (<code>b</code>) into a variable named <code>t1</code>.
     </p>
     
     <br>
@@ -120,16 +129,15 @@
     <br>
 
     <p>
-        Those <code>ssa.Value</code> objects are connected to the next
-        <code>ssa.Value</code> object by a <code>ssa.Instruction</code> object,
-        a <a href="https://golang.org/ref/spec#Operators">binary operation</a> which adds the values of <code>t0</code>
-        and <code>t1</code> together. The result of the addition is stored in a variable named <code>t2</code>. 
+        Those values are connected to the next value,
+        a <a href="https://golang.org/ref/spec#Operators">binary operation</a> (<code><a href="https://pkg.go.dev/golang.org/x/tools/go/ssa#BinOp">ssa.BinOp</a></code>) instruction which adds the values of <code>t0</code>
+        and <code>t1</code> together. The result of this operation is stored in a variable named <code>t2</code>. 
     </p>
     
     <br>
 
     <p>
-        <code>t2</code> is connected to the next <code>ssa.Value</code> object by another <code>ssa.Instruction</code>
+        Then <code>t2</code> is connected to the next value, another <code>ssa.Instruction</code>
         object. The <code>ssa.Instruction</code> object is a <a href="https://golang.org/ref/spec#Operators">unary operator</a>
         which returns the value of <code>t2</code>. 
     </p>
@@ -146,7 +154,7 @@
         This <code>ssa.Value</code> object is connected to the next
         <code>ssa.Value</code> object by another <code>ssa.Instruction</code> object which stores the value of <code>t3</code>. 
         This value is used in a <a href="https://golang.org/ref/spec#Return_statements">return statement</a> which returns the value
-        of <code>t3</code>, the last <code>ssa.Value</code> object in the graph.
+        of <code>t3</code> using the last <code>ssa.Value</code> object in the graph, an <code><a href="https://pkg.go.dev/golang.org/x/tools/go/ssa#Return">ssa.Return</a></code> instruction.
     </p>    
 
     <br>
@@ -209,11 +217,12 @@
     <br>
 
     <p> 
-        This is a simple example of a single function with two parameters and one return value. Other functions
-        are likely involved in the program you are trying to analyze, with more even more
+        This is a simple example of a single function with two parameters and one return value. Other 
+        functions are likely involved in the program you are trying to analyze, with more
         <code>ssa.Value</code> and <code>ssa.Instruction</code> objects. These objects may be passed
         as arguments to other functions, or returned as the result of a function call. Functions may
-        also call other functions, building a related graph called a <strong><a href="https://en.wikipedia.org/wiki/Call_graph">call graph</a></strong>.
+        also call other functions, building a related graph called a 
+        <strong><a href="https://en.wikipedia.org/wiki/Call_graph">call graph</a></strong>.
     </p>
 
     <br>
