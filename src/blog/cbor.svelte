@@ -151,7 +151,7 @@
         Looking at the table, we can see that CBOR is <i>not</i> the smallest format, but it is still <i>relatively</i> small. It is
         most similar to <a href="https://msgpack.org/index.html">MessagePack</a>, which it actually <a href="https://www.rfc-editor.org/rfc/rfc7049#section-9">took inspiration from</a>.
         
-        Unlike thes rest of the examples shown, <a href="https://developers.google.com/protocol-buffers">Protcol Buffers</a> is <i>not</i> a
+        Unlike the rest of the examples shown, <a href="https://developers.google.com/protocol-buffers">Protcol Buffers</a> is <i>not</i> a
         schemaless format. It requires a <a href="https://developers.google.com/protocol-buffers/docs/proto3#simple">schema to be defined</a>, 
         which is then used to encode and decode the data. This is why it can ommit the field name "<code>hello</code>" and just reference it by a field number (<code>\x0a</code>).
     </p>
