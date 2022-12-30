@@ -294,8 +294,8 @@
     <br>
 
     <p>
-        Overall, CBOR is an interesting format that is worth looking into. If you're using it in a context where you need to decode data from an untrusted source, it is
-        look at decoder options that may (or may not be) available to you, and consider adding additional limits than what might be provided by default.
+        Overall, CBOR is an interesting format that is worth looking into. If you're using it in a context where you need to decode data from an untrusted source,
+        check out the decoder options that may (or may not be) available to you, and consider adding additional limits than what might be provided by default.
     </p>
 
     <br>
