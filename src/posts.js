@@ -31,6 +31,12 @@ let blogPosts = {
 		excerpt: "Introduction to Concise Binary Object Representation.",
 		import: () => import('./blog/cbor.svelte')
 	},
+	taint: {
+		title: "Static Taint Analysis for Go",
+		date: "2023-1-2",
+		excerpt: "How to find vulnerabilities with taint analysis.",
+		import: () => import('./blog/taint.svelte')
+	},
 }
 
 export default blogPosts;
