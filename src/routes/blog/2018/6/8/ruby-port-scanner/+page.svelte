@@ -125,13 +125,14 @@
 			<code>async</code> libraries we want to use.
 		</p>
 
-		<Code language="ruby">
-			{`require "async/await"
+		<Code
+			language="ruby"
+			code={`require "async/await"
 require "async/io"
 require "async/semaphore"
 
 # more code ...`}
-		</Code>
+		/>
 
 		<p class="mt-6">
 			Now, let's create a <code>PortScanner</code> class, including the libraries within it to
@@ -143,8 +144,9 @@ require "async/semaphore"
 			> method:
 		</p>
 
-		<Code language="ruby">
-			{`# previous code ...
+		<Code
+			language="ruby"
+			code={`# previous code ...
 
 class PortScanner
   include Async::Await
@@ -158,7 +160,7 @@ class PortScanner
   
   # more code...
 end`}
-		</Code>
+		/>
 
 		<p class="mt-6">
 			By default, if no <code>host:</code> argument is given when creating a new instance of our
@@ -210,8 +212,9 @@ end`}
 			</p>
 		</div>
 
-		<Code language="ruby">
-			{`# inside of PortScanner, under initialize ...
+		<Code
+			language="ruby"
+			code={`# inside of PortScanner, under initialize ...
 
 def scan_port(port, timeout: 0.5)
   timeout(timeout) do
@@ -228,7 +231,7 @@ rescue Errno::EMFILE
 end
 
 # more code...`}
-		</Code>
+		/>
 
 		<h3 class="text-xl font-semibold mt-8 mb-4">🤹🏻‍ Three Essential Errors to Juggle:</h3>
 
@@ -323,8 +326,9 @@ end
 			method definition.
 		</p>
 
-		<Code language="ruby">
-			{`# inside of PortScanner, under scan_port ...
+		<Code
+			language="ruby"
+			code={`# inside of PortScanner, under scan_port ...
 
 async def start(timeout: 0.5)
   @ports.map do |port|
@@ -333,7 +337,7 @@ async def start(timeout: 0.5)
     end
   end.collect(&:result)
 end`}
-		</Code>
+		/>
 
 		<p class="mt-6">
 			Within the <code>#start</code> method, each port in the range that the
@@ -350,11 +354,12 @@ end`}
 			To use the port scanning API we just created could look something just like the following:
 		</p>
 
-		<Code language="ruby">
-			{`# previous code ...
+		<Code
+			language="ruby"
+			code={`# previous code ...
 
 PortScanner.new(host: "127.0.0.1", ports: (1..1024)).start`}
-		</Code>
+		/>
 
 		<p class="mt-6">
 			There aren't any open ports to test with? Using <code
@@ -364,9 +369,7 @@ PortScanner.new(host: "127.0.0.1", ports: (1..1024)).start`}
 			> listener on your localhost on port <code>1024</code>:
 		</p>
 
-		<Code language="bash">
-			{`$ nc -v -l -p 1024`}
-		</Code>
+		<Code language="bash" code={`$ nc -v -l -p 1024`} />
 
 		<p class="mt-4">
 			Now, let's run our port scanner, using <code
@@ -374,10 +377,11 @@ PortScanner.new(host: "127.0.0.1", ports: (1..1024)).start`}
 			> to filter for the open ports:
 		</p>
 
-		<Code language="bash">
-			{`$ ruby async_port_scanner.rb | grep "open"
+		<Code
+			language="bash"
+			code={`$ ruby async_port_scanner.rb | grep "open"
 1024 open`}
-		</Code>
+		/>
 
 		<p class="mt-4">
 			💥Bam! Just like that, we have a port scanner! How fast does it go? Using <code
@@ -385,14 +389,15 @@ PortScanner.new(host: "127.0.0.1", ports: (1..1024)).start`}
 			> on Unix-like operating systems can help us get an idea:
 		</p>
 
-		<Code language="bash">
-			{`$ time ruby async_port_scanner.rb | grep "open"
+		<Code
+			language="bash"
+			code={`$ time ruby async_port_scanner.rb | grep "open"
 1024 open
 
 real    0m2.345s
 user    0m0.531s
 sys     0m0.130s`}
-		</Code>
+		/>
 
 		<p class="mt-4">
 			That's roughly 2–3 seconds to scan all those ports (<code>1024</code> of them) on a single
@@ -400,11 +405,12 @@ sys     0m0.130s`}
 			take?
 		</p>
 
-		<Code language="bash">
-			{`real    1m12.693s
+		<Code
+			language="bash"
+			code={`real    1m12.693s
 user    1m5.933s
 sys     0m5.157s`}
-		</Code>
+		/>
 
 		<p class="mt-4">
 			So, if I can do the calculation right: <code>65535 ports/(1min + 12secs = 72secs)</code> would
@@ -423,8 +429,10 @@ sys     0m5.157s`}
 			</p>
 		</div>
 
-		<Code language="ruby">
-			{`require "async/await"
+		<Code
+			title="Complete asynchronous port scanner source code"
+			language="ruby"
+			code={`require "async/await"
 require "async/io"
 require "async/semaphore"
 
@@ -462,7 +470,7 @@ class PortScanner
 end
 
 PortScanner.new(host: "127.0.0.1", ports: (1..1024)).start`}
-		</Code>
+		/>
 
 		<h2 class="text-2xl font-bold mt-8 mb-4">👋 Conclusion</h2>
 
