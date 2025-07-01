@@ -14,15 +14,15 @@
 					day: 'numeric'
 				});
 			}
-			
+
 			// Create date from numeric values
 			const dateObj = new Date(post.year, post.month - 1, post.day);
-			
+
 			// Check if date is valid
 			if (isNaN(dateObj.getTime())) {
 				return `${post.month}/${post.day}/${post.year}`;
 			}
-			
+
 			return dateObj.toLocaleDateString('en-US', {
 				year: 'numeric',
 				month: 'short',
@@ -72,8 +72,16 @@
 	>
 		<div class="p-4 sm:p-6 {featured ? 'lg:p-8' : ''} h-full flex flex-col">
 			<!-- Header with date -->
-			<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 {featured ? 'gap-2 sm:gap-0' : 'gap-2'}">
-				<div class="flex flex-col {featured ? 'sm:flex-row' : ''} {featured ? 'sm:items-center' : ''} {featured ? 'sm:space-x-3' : ''} space-y-2 {featured ? 'sm:space-y-0' : ''}">
+			<div
+				class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 {featured
+					? 'gap-2 sm:gap-0'
+					: 'gap-2'}"
+			>
+				<div
+					class="flex flex-col {featured ? 'sm:flex-row' : ''} {featured
+						? 'sm:items-center'
+						: ''} {featured ? 'sm:space-x-3' : ''} space-y-2 {featured ? 'sm:space-y-0' : ''}"
+				>
 					{#if featured}
 						<span
 							class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-blue-600 to-purple-600 text-white w-fit"
@@ -82,10 +90,7 @@
 							Featured
 						</span>
 					{/if}
-					<time
-						datetime={isoDate}
-						class="text-sm text-slate-500 dark:text-slate-400 font-medium"
-					>
+					<time datetime={isoDate} class="text-sm text-slate-500 dark:text-slate-400 font-medium">
 						{formattedDate}
 					</time>
 				</div>

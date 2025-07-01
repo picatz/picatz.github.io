@@ -305,7 +305,9 @@
 				{/if}
 
 				<!-- Regular Posts Grid -->
-				<div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 auto-rows-fr mb-12">
+				<div
+					class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 auto-rows-fr mb-12"
+				>
 					{#each posts.slice((currentPage - 1) * pageSize + (currentPage === 1 ? 1 : 0), currentPage * pageSize + (currentPage === 1 ? 1 : 0)) as post}
 						<BlogCard {post} />
 					{/each}
