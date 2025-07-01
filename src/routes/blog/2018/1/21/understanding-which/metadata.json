@@ -1,0 +1,6 @@
+{
+	"title": "Understanding which(1)",
+	"description": "To lookup the full path of a shell command, you'll probably use which. But, how does it actually work? Let's build our own implementation in Go!",
+	"date": "2018-01-21",
+	"tags": ["go", "linux", "command-line", "unix", "shell"]
+}
