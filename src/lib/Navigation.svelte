@@ -15,14 +15,14 @@
 		<div class="flex justify-between h-16">
 			<!-- Logo/Brand -->
 			<div class="flex items-center">
-				<a href="/" class="flex items-center space-x-3 group relative">
+				<a href="/" class="flex items-center space-x-2 sm:space-x-3 group relative">
 					<div
-						class="w-9 h-9 p-0.5 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl transform transition-all duration-200 group-hover:scale-105"
+						class="w-8 h-8 sm:w-9 sm:h-9 p-0.5 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg sm:rounded-xl transform transition-all duration-200 group-hover:scale-105"
 					>
 						<img
 							src="/profile.png"
 							alt="Kent Gruber"
-							class="w-full h-full object-cover rounded-lg"
+							class="w-full h-full object-cover rounded-md sm:rounded-lg"
 						/>
 					</div>
 
@@ -71,7 +71,9 @@
 					</div>
 
 					<div class="hidden sm:block">
-						<span class="font-bold text-xl text-slate-900 dark:text-white">Kent Gruber</span>
+						<span class="font-bold text-lg sm:text-xl text-slate-900 dark:text-white"
+							>Kent Gruber</span
+						>
 						<div class="text-xs text-slate-500 dark:text-slate-400 font-medium">
 							Security Engineer
 						</div>
@@ -215,10 +217,10 @@
 			class="md:hidden bg-white/95 dark:bg-black/95 backdrop-blur-sm border-t border-slate-200 dark:border-slate-800"
 			transition:slide={{ duration: 200 }}
 		>
-			<div class="px-4 pt-4 pb-6 space-y-1">
+			<div class="px-4 pt-3 pb-4 space-y-1">
 				<a
 					href="/"
-					class="flex items-center gap-3 px-3 py-3 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200"
+					class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200"
 					on:click={() => (isMenuOpen = false)}
 				>
 					<svg
@@ -239,7 +241,7 @@
 
 				<a
 					href="/#blog"
-					class="flex items-center gap-3 px-3 py-3 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200"
+					class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200"
 					on:click={() => (isMenuOpen = false)}
 				>
 					<svg
@@ -262,7 +264,7 @@
 					href="https://github.com/picatz"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="flex items-center gap-3 px-3 py-3 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200"
+					class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200"
 					aria-label="GitHub Profile"
 					on:click={() => (isMenuOpen = false)}
 				>

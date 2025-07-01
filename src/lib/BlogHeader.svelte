@@ -7,7 +7,7 @@
 		try {
 			// Handle different date formats
 			let dateObj;
-			
+
 			if (date.includes('-')) {
 				// Handle formats like "12-29-2022" or "2022-12-29"
 				const parts = date.split('-');
@@ -25,7 +25,7 @@
 				// Try parsing as-is
 				dateObj = new Date(date);
 			}
-			
+
 			// Check if date is valid
 			if (dateObj && !isNaN(dateObj.getTime())) {
 				return dateObj.toLocaleDateString('en-US', {

@@ -11,24 +11,24 @@
 </svelte:head>
 
 <div class="min-h-screen bg-white dark:bg-slate-950">
-	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
 		<!-- Introduction -->
-		<div class="mb-16">
-			<div class="prose prose-lg prose-slate dark:prose-invert mx-auto">
+		<div class="mb-8 sm:mb-12 lg:mb-16">
+			<div class="prose prose-sm sm:prose-base lg:prose-lg prose-slate dark:prose-invert mx-auto">
 				<p>
 					I'm a security engineer with a passion for discovering vulnerabilities, building secure
 					systems, and sharing knowledge about cybersecurity practices. My work focuses on static
 					analysis, vulnerability research, and helping teams build more secure software.
 				</p>
 
-				<p>
+				<p class="hidden sm:block">
 					With expertise in various programming languages and security tools, I enjoy diving deep
 					into code to understand how systems work and where they might be vulnerable. I believe
 					that security is everyone's responsibility and strive to make security knowledge
 					accessible to all developers.
 				</p>
 
-				<p>
+				<p class="hidden lg:block">
 					When I'm not analyzing code or writing about security, you can find me contributing to
 					open source projects, attending security conferences, or exploring new technologies that
 					can make the internet a safer place.
@@ -37,31 +37,34 @@
 		</div>
 
 		<!-- Experience Section -->
-		<!-- Experience Section -->
-		<div class="mb-16">
-			<h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">Experience</h2>
-			<div class="space-y-6">
+		<div class="mb-8 sm:mb-12 lg:mb-16">
+			<h2
+				class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6 lg:mb-8 text-center"
+			>
+				Experience
+			</h2>
+			<div class="space-y-4 sm:space-y-6">
 				<!-- Temporal -->
 				<div
-					class="group bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
+					class="group bg-white dark:bg-slate-900 rounded-lg sm:rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 p-4 sm:p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
 				>
-					<div class="flex items-start space-x-4">
+					<div class="flex items-start space-x-3 sm:space-x-4">
 						<div
-							class="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg transition-transform duration-300 group-hover:scale-105"
+							class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg flex items-center justify-center text-white font-bold text-lg sm:text-xl shadow-lg transition-transform duration-300 group-hover:scale-105 flex-shrink-0"
 						>
 							T
 						</div>
 						<div class="flex-1 min-w-0">
-							<div class="flex items-start justify-between mb-2">
-								<div>
-									<h3 class="text-xl font-semibold text-slate-900 dark:text-white">
+							<div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2">
+								<div class="mb-2 sm:mb-0">
+									<h3 class="text-lg sm:text-xl font-semibold text-slate-900 dark:text-white">
 										Staff Application Security Engineer
 									</h3>
-									<div class="flex items-center space-x-2 mt-1">
+									<div class="flex flex-col sm:flex-row sm:items-center sm:space-x-2 mt-1">
 										<p class="text-purple-600 dark:text-purple-400 font-medium">Temporal</p>
-										<span class="text-slate-400">•</span>
+										<span class="hidden sm:inline text-slate-400">•</span>
 										<span
-											class="text-sm text-slate-500 dark:text-slate-400 flex items-center space-x-1"
+											class="hidden sm:flex text-sm text-slate-500 dark:text-slate-400 items-center space-x-1"
 										>
 											<svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
 												<path
@@ -73,13 +76,13 @@
 									</div>
 								</div>
 								<span
-									class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300"
+									class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 self-start"
 								>
 									Current
 								</span>
 							</div>
 							<p
-								class="text-slate-600 dark:text-slate-400 text-sm mb-3 flex items-center space-x-1"
+								class="text-slate-600 dark:text-slate-400 text-sm mb-2 sm:mb-3 flex items-center space-x-1"
 							>
 								<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
 									<path
@@ -88,7 +91,7 @@
 								</svg>
 								<span>July 2025 - Present</span>
 							</p>
-							<p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+							<p class="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed">
 								Working on security initiatives for the durable execution platform that powers
 								mission-critical applications.
 							</p>
@@ -98,24 +101,24 @@
 
 				<!-- HashiCorp -->
 				<div
-					class="group bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
+					class="group bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 p-4 sm:p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
 				>
-					<div class="flex items-start space-x-4">
+					<div class="flex items-start space-x-3 sm:space-x-4">
 						<div
-							class="w-16 h-16 bg-gradient-to-br from-gray-800 to-black rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg transition-transform duration-300 group-hover:scale-105"
+							class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-gray-800 to-black rounded-lg flex items-center justify-center text-white font-bold text-lg sm:text-xl shadow-lg transition-transform duration-300 group-hover:scale-105"
 						>
 							H
 						</div>
 						<div class="flex-1 min-w-0">
 							<div class="mb-2">
-								<h3 class="text-xl font-semibold text-slate-900 dark:text-white">
+								<h3 class="text-lg sm:text-xl font-semibold text-slate-900 dark:text-white">
 									Senior Product Security Engineer
 								</h3>
-								<div class="flex items-center space-x-2 mt-1">
+								<div class="flex flex-col sm:flex-row sm:items-center sm:space-x-2 mt-1">
 									<p class="text-slate-800 dark:text-slate-200 font-medium">HashiCorp</p>
-									<span class="text-slate-400">•</span>
+									<span class="hidden sm:inline text-slate-400">•</span>
 									<span
-										class="text-sm text-slate-500 dark:text-slate-400 flex items-center space-x-1"
+										class="hidden sm:flex text-sm text-slate-500 dark:text-slate-400 items-center space-x-1"
 									>
 										<svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
 											<path
@@ -134,9 +137,9 @@
 										d="M9 11H7V9H9V11M13 11H11V9H13V11M17 11H15V9H17V11M19 3H18V1H16V3H8V1H6V3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3M19 19H5V8H19V19Z"
 									/>
 								</svg>
-								<span>August 2019 - June 2025</span>
-								<span class="text-slate-400">•</span>
-								<span class="text-slate-500 dark:text-slate-400">6 years</span>
+								<span>Aug 2019 - Jun 2025</span>
+								<span class="hidden sm:inline text-slate-400">•</span>
+								<span class="hidden sm:inline text-slate-500 dark:text-slate-400">6 yrs</span>
 							</p>
 							<div class="space-y-2">
 								<p class="text-slate-700 dark:text-slate-300 leading-relaxed">
@@ -162,24 +165,24 @@
 
 				<!-- Mahindra Automotive -->
 				<div
-					class="group bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
+					class="group bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 p-4 sm:p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
 				>
-					<div class="flex items-start space-x-4">
+					<div class="flex items-start space-x-3 sm:space-x-4">
 						<div
-							class="w-16 h-16 bg-gradient-to-br from-red-600 to-red-800 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg transition-transform duration-300 group-hover:scale-105"
+							class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-red-600 to-red-800 rounded-lg flex items-center justify-center text-white font-bold text-lg sm:text-xl shadow-lg transition-transform duration-300 group-hover:scale-105"
 						>
 							M
 						</div>
 						<div class="flex-1 min-w-0">
 							<div class="mb-2">
-								<h3 class="text-xl font-semibold text-slate-900 dark:text-white">
+								<h3 class="text-lg sm:text-xl font-semibold text-slate-900 dark:text-white">
 									Software Engineer (Contractor)
 								</h3>
-								<div class="flex items-center space-x-2 mt-1">
+								<div class="flex flex-col sm:flex-row sm:items-center sm:space-x-2 mt-1">
 									<p class="text-red-600 dark:text-red-400 font-medium">Mahindra Automotive</p>
-									<span class="text-slate-400">•</span>
+									<span class="hidden sm:inline text-slate-400">•</span>
 									<span
-										class="text-sm text-slate-500 dark:text-slate-400 flex items-center space-x-1"
+										class="hidden sm:flex text-sm text-slate-500 dark:text-slate-400 items-center space-x-1"
 									>
 										<svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
 											<path
@@ -198,9 +201,9 @@
 										d="M9 11H7V9H9V11M13 11H11V9H13V11M17 11H15V9H17V11M19 3H18V1H16V3H8V1H6V3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3M19 19H5V8H19V19Z"
 									/>
 								</svg>
-								<span>December 2016 - August 2019</span>
-								<span class="text-slate-400">•</span>
-								<span class="text-slate-500 dark:text-slate-400">2 years 9 months</span>
+								<span>Dec 2016 - Aug 2019</span>
+								<span class="hidden sm:inline text-slate-400">•</span>
+								<span class="hidden sm:inline text-slate-500 dark:text-slate-400">2 yrs 9 mos</span>
 							</p>
 							<p class="text-slate-700 dark:text-slate-300 leading-relaxed">
 								Developed applications using <span
@@ -214,24 +217,24 @@
 
 				<!-- Web & Moore -->
 				<div
-					class="group bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
+					class="group bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 p-4 sm:p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
 				>
-					<div class="flex items-start space-x-4">
+					<div class="flex items-start space-x-3 sm:space-x-4">
 						<div
-							class="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg transition-transform duration-300 group-hover:scale-105"
+							class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center text-white font-bold text-lg sm:text-xl shadow-lg transition-transform duration-300 group-hover:scale-105"
 						>
 							W
 						</div>
 						<div class="flex-1 min-w-0">
 							<div class="mb-2">
-								<h3 class="text-xl font-semibold text-slate-900 dark:text-white">
+								<h3 class="text-lg sm:text-xl font-semibold text-slate-900 dark:text-white">
 									Security Analyst
 								</h3>
-								<div class="flex items-center space-x-2 mt-1">
+								<div class="flex flex-col sm:flex-row sm:items-center sm:space-x-2 mt-1">
 									<p class="text-blue-600 dark:text-blue-400 font-medium">Web & Moore</p>
-									<span class="text-slate-400">•</span>
+									<span class="hidden sm:inline text-slate-400">•</span>
 									<span
-										class="text-sm text-slate-500 dark:text-slate-400 flex items-center space-x-1"
+										class="hidden sm:flex text-sm text-slate-500 dark:text-slate-400 items-center space-x-1"
 									>
 										<svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
 											<path
@@ -250,9 +253,9 @@
 										d="M9 11H7V9H9V11M13 11H11V9H13V11M17 11H15V9H17V11M19 3H18V1H16V3H8V1H6V3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3M19 19H5V8H19V19Z"
 									/>
 								</svg>
-								<span>August 2015 - August 2016</span>
-								<span class="text-slate-400">•</span>
-								<span class="text-slate-500 dark:text-slate-400">1 year</span>
+								<span>Aug 2015 - Aug 2016</span>
+								<span class="hidden sm:inline text-slate-400">•</span>
+								<span class="hidden sm:inline text-slate-500 dark:text-slate-400">1 yr</span>
 							</p>
 							<p class="text-slate-700 dark:text-slate-300 leading-relaxed">
 								Handled incident response activities for cloud infrastructure. Automated
@@ -265,19 +268,23 @@
 		</div>
 
 		<!-- Education Section -->
-		<div class="mb-16">
-			<h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">Education</h2>
-			<div class="space-y-8">
+		<div class="mb-8 sm:mb-12 lg:mb-16">
+			<h2
+				class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6 lg:mb-8 text-center"
+			>
+				Education
+			</h2>
+			<div class="space-y-6 sm:space-y-8">
 				<!-- Eastern Michigan University -->
 				<div
-					class="bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
+					class="bg-white dark:bg-slate-900 rounded-lg sm:rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 p-4 sm:p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
 				>
-					<div class="flex items-start space-x-4">
+					<div class="flex items-start space-x-3 sm:space-x-4">
 						<!-- University icon with graduation cap -->
 						<div
-							class="w-16 h-16 bg-green-600 rounded-lg flex items-center justify-center text-white font-bold text-xl"
+							class="w-12 h-12 sm:w-16 sm:h-16 bg-green-600 rounded-lg flex items-center justify-center text-white font-bold text-lg sm:text-xl flex-shrink-0"
 						>
-							<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+							<svg class="w-6 h-6 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24">
 								<path
 									d="M12 3L1 9L12 15L21 11.09V17H23V9M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18Z"
 								/>
@@ -285,17 +292,21 @@
 						</div>
 
 						<!-- Content -->
-						<div class="flex-1">
-							<h3 class="text-xl font-semibold text-slate-900 dark:text-white">
+						<div class="flex-1 min-w-0">
+							<h3 class="text-lg sm:text-xl font-semibold text-slate-900 dark:text-white">
 								Eastern Michigan University
 							</h3>
-							<p class="text-green-600 dark:text-green-400 font-medium">
-								Bachelor of Science in Information Assurance & Cyber Defense · Ypsilanti, MI
+							<p class="text-green-600 dark:text-green-400 font-medium text-sm sm:text-base">
+								Bachelor of Science in Information Assurance & Cyber Defense · <span
+									class="hidden sm:inline">Ypsilanti, MI</span
+								>
 							</p>
-							<p class="text-slate-600 dark:text-slate-400 text-sm mb-4">August 2013 - 2019</p>
+							<p class="text-slate-600 dark:text-slate-400 text-sm mb-3 sm:mb-4">
+								August 2013 - 2019
+							</p>
 
 							<!-- Enhanced content organization -->
-							<div class="space-y-3">
+							<div class="space-y-2 sm:space-y-3">
 								<div class="flex items-start space-x-2">
 									<div class="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
 									<p class="text-slate-700 dark:text-slate-300 text-sm">
@@ -305,7 +316,7 @@
 									</p>
 								</div>
 
-								<div class="flex items-start space-x-2">
+								<div class="hidden sm:flex items-start space-x-2">
 									<div class="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
 									<p class="text-slate-700 dark:text-slate-300 text-sm">
 										<span class="font-medium text-slate-900 dark:text-white">Activities:</span> Information
@@ -326,10 +337,13 @@
 												d="M12 2L13.09 8.26L19 9L13.09 9.74L12 16L10.91 9.74L5 9L10.91 8.26L12 2Z"
 											/>
 										</svg>
-										<p class="text-slate-700 dark:text-slate-300 text-sm">
+										<p class="text-slate-700 dark:text-slate-300 text-xs sm:text-sm">
 											<span class="font-medium text-slate-900 dark:text-white"
 												>Center of Academic Excellence</span
-											> in Information Assurance, sponsored by the National Security Agency
+											>
+											in Information Assurance<span class="hidden sm:inline"
+												>, sponsored by the National Security Agency</span
+											>
 										</p>
 									</div>
 								</div>
@@ -341,15 +355,19 @@
 		</div>
 
 		<!-- Projects Section -->
-		<div class="mb-16">
-			<h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2 text-center">
+		<div class="mb-8 sm:mb-12 lg:mb-16">
+			<h2
+				class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-2 text-center"
+			>
 				Notable Projects
 			</h2>
-			<p class="text-slate-600 dark:text-slate-400 text-center mb-8 max-w-2xl mx-auto">
+			<p
+				class="text-sm sm:text-base text-slate-600 dark:text-slate-400 text-center mb-6 sm:mb-8 max-w-2xl mx-auto"
+			>
 				A curated selection of open-source tools and libraries spanning security research,
 				cryptography, and developer productivity
 			</p>
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
 				<!-- CLI for OpenAI -->
 				<div
 					class="bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 p-6"
@@ -647,17 +665,21 @@
 		</div>
 
 		<!-- CVEs & Security Research -->
-		<div class="mb-16">
-			<h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2 text-center">
+		<div class="mb-8 sm:mb-12 lg:mb-16">
+			<h2
+				class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-2 text-center"
+			>
 				CVEs & Security Research
 			</h2>
-			<p class="text-slate-600 dark:text-slate-400 text-center mb-8 max-w-3xl mx-auto">
+			<p
+				class="text-sm sm:text-base text-slate-600 dark:text-slate-400 text-center mb-6 sm:mb-8 max-w-3xl mx-auto"
+			>
 				Disclosed vulnerabilities and security research contributions with CVSS severity ratings
 			</p>
 			<div
-				class="bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 p-6"
+				class="bg-white dark:bg-slate-900 rounded-lg sm:rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 p-4 sm:p-6"
 			>
-				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
 					<!-- CVE-2020-25864 (Medium - 6.1) -->
 					<a
 						href="https://nvd.nist.gov/vuln/detail/CVE-2020-25864"
@@ -1162,7 +1184,7 @@
 							<h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight mb-2">
 								Fuzzing Nomad with Nomad
 							</h3>
-							<p class="text-sm text-slate-500 dark:text-slate-400 mb-1">HashiConf 2019</p>
+							<p class="text-sm text-slate-500 dark:text-slate-400 mb-1">HashiDays 2019</p>
 						</div>
 					</div>
 					<p class="text-slate-700 dark:text-slate-300 mb-6 leading-relaxed">

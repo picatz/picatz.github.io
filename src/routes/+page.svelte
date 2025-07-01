@@ -134,33 +134,49 @@
 	<div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
 		<!-- Core Mission Statement with enhanced animation -->
 		<div class="animate-fade-in-up">
-			<h2
-				class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-8 sm:mb-12 animate-breathing"
+			<h1
+				class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 sm:mb-8 lg:mb-12 leading-tight animate-breathing"
 			>
-				Passionate about
-				<br />
-				<span class="inline-block animate-slide-in-left animation-delay-300">
-					finding <span
-						class="bg-gradient-to-r from-violet-600 via-purple-600 to-blue-600 bg-clip-text text-transparent animate-gradient-shift"
-						>vulnerabilities</span
-					>
-					and
+				<!-- First line: "Passionate about" -->
+				<span class="block mb-0.5 sm:mb-1 lg:mb-2">Passionate about</span>
+
+				<!-- Second line: "finding vulnerabilities and" -->
+				<span class="block mb-0.5 sm:mb-1 lg:mb-2">
+					<span class="inline-block animate-slide-in-left animation-delay-300">
+						finding
+						<span
+							class="bg-gradient-to-r from-violet-600 via-purple-600 to-blue-600 bg-clip-text text-transparent animate-gradient-shift ml-2"
+						>
+							vulnerabilities
+						</span>
+					</span>
+					<span class="inline-block ml-2">and</span>
 				</span>
-				<br />
-				<span class="inline-block animate-slide-in-right animation-delay-600">
-					building <span
-						class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent animate-gradient-shift"
-						>safer systems</span
-					>
+
+				<!-- Third line: "building safer systems" -->
+				<span class="block mb-0.5 sm:mb-1 lg:mb-2">
+					<span class="inline-block animate-slide-in-right animation-delay-600">
+						building
+						<span
+							class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent animate-gradient-shift ml-2"
+						>
+							safer systems
+						</span>
+					</span>
 				</span>
-				<br />
-				<span class="inline-block animate-slide-in-left animation-delay-900">
-					with <span
-						class="bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent animate-gradient-shift"
-						>wonderful people</span
-					>.
+
+				<!-- Fourth line: "with wonderful people." -->
+				<span class="block">
+					<span class="inline-block animate-slide-in-left animation-delay-900">
+						with
+						<span
+							class="bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent animate-gradient-shift ml-2"
+						>
+							wonderful people
+						</span><span class="text-slate-900 dark:text-white">.</span>
+					</span>
 				</span>
-			</h2>
+			</h1>
 		</div>
 
 		<!-- Elegant Scroll Invitation -->
@@ -195,31 +211,79 @@
 </section>
 
 <!-- About Section -->
-<section class="py-16 md:py-24 bg-slate-50 dark:bg-slate-900">
+<section class="py-12 sm:py-16 lg:py-24 bg-slate-50 dark:bg-slate-900">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6">
-		<!-- Mobile First: Image at top, centered -->
-		<div class="text-center mb-8 lg:hidden">
-			<div class="inline-block relative">
-				<img
-					src="/profile.png"
-					alt="Kent Gruber"
-					class="w-48 h-48 sm:w-56 sm:h-56 rounded-2xl object-cover shadow-xl border-4 border-white dark:border-slate-700 mx-auto"
-				/>
-				<div
-					class="absolute inset-0 rounded-2xl bg-gradient-to-tr from-blue-500/20 to-purple-500/20"
-				></div>
+		<!-- Mobile/Tablet Layout -->
+		<div class="lg:hidden">
+			<!-- Mobile Header -->
+			<div class="text-center mb-8">
+				<h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">About Me</h2>
+			</div>
+
+			<!-- Mobile Profile Image -->
+			<div class="flex justify-center mb-8">
+				<div class="relative">
+					<img
+						src="/profile.png"
+						alt="Kent Gruber"
+						class="w-32 h-32 sm:w-40 sm:h-40 rounded-xl sm:rounded-2xl object-cover shadow-lg border-2 border-white dark:border-slate-700"
+					/>
+					<div
+						class="absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-blue-500/15 to-purple-500/15"
+					></div>
+				</div>
+			</div>
+
+			<!-- Mobile Content - Condensed -->
+			<div
+				class="space-y-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 text-center sm:text-left"
+			>
+				<p class="leading-relaxed">
+					Security engineer passionate about finding vulnerabilities and building secure systems. I
+					focus on static analysis, vulnerability research, and helping teams build safer software.
+				</p>
+
+				<!-- Show only key info on mobile -->
+				<div class="sm:hidden">
+					<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+						Currently at <span class="font-medium text-blue-600 dark:text-blue-400">Temporal</span>
+						as a <br /><strong>Staff Application Security Engineer</strong>.
+					</p>
+				</div>
+
+				<!-- Show more detail on tablet -->
+				<div class="hidden sm:block lg:hidden">
+					<p class="leading-relaxed">
+						With expertise in security tools and programming languages, I help make security
+						knowledge accessible to developers and contribute to open source projects.
+					</p>
+				</div>
+			</div>
+
+			<!-- Mobile CTA -->
+			<div class="mt-6 text-center">
+				<a
+					href="/about"
+					class="inline-flex items-center px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 text-sm sm:text-base"
+				>
+					Learn more
+					<svg class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M17 8l4 4m0 0l-4 4m4-4H3"
+						/>
+					</svg>
+				</a>
 			</div>
 		</div>
 
-		<!-- Desktop: Side-by-side layout -->
-		<div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+		<!-- Desktop Layout -->
+		<div class="hidden lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
 			<!-- About Content -->
 			<div class="lg:order-2">
-				<h2
-					class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6 text-center lg:text-left"
-				>
-					About Me
-				</h2>
+				<h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-6">About Me</h2>
 				<div class="space-y-6 text-lg text-slate-600 dark:text-slate-300">
 					<p>
 						I'm a security engineer with a passion for discovering vulnerabilities, building secure
@@ -238,7 +302,7 @@
 						can make the internet a safer place.
 					</p>
 				</div>
-				<div class="mt-8 text-center lg:text-left">
+				<div class="mt-8">
 					<a
 						href="/about"
 						class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
@@ -257,7 +321,7 @@
 			</div>
 
 			<!-- Desktop Profile Image -->
-			<div class="hidden lg:flex lg:order-1 lg:justify-center">
+			<div class="lg:order-1 lg:flex lg:justify-center">
 				<div class="relative">
 					<img
 						src="/profile.png"
@@ -274,12 +338,16 @@
 </section>
 
 <!-- Blog Section -->
-<section id="blog" class="py-24 bg-white dark:bg-slate-950">
+<section id="blog" class="py-16 sm:py-20 lg:py-24 bg-white dark:bg-slate-950">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6">
 		<!-- Section Header -->
-		<div class="text-center mb-12 sm:mb-16">
-			<h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Blog</h2>
-			<p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-8">
+		<div class="text-center mb-8 sm:mb-12 lg:mb-16">
+			<h2
+				class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-3 sm:mb-4"
+			>
+				Blog
+			</h2>
+			<p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
 				Thoughts on cybersecurity, software, and more.
 			</p>
 		</div>
@@ -291,9 +359,9 @@
 			{#if posts && posts.length > 0}
 				<!-- Featured Post -->
 				{#if currentPage === 1 && posts[0]}
-					<div class="mb-12 sm:mb-16">
+					<div class="mb-6 sm:mb-8 lg:mb-12">
 						<div
-							class="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-slate-800 dark:to-slate-700 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-slate-200 dark:border-slate-600"
+							class="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-slate-800 dark:to-slate-700 rounded-xl sm:rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 border border-slate-200 dark:border-slate-600"
 						>
 							<BlogCard
 								post={posts[0]}
@@ -306,7 +374,7 @@
 
 				<!-- Regular Posts Grid -->
 				<div
-					class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 auto-rows-fr mb-12"
+					class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12 items-stretch"
 				>
 					{#each posts.slice((currentPage - 1) * pageSize + (currentPage === 1 ? 1 : 0), currentPage * pageSize + (currentPage === 1 ? 1 : 0)) as post}
 						<BlogCard {post} />
