@@ -1,0 +1,4 @@
+{
+    "title": "Static Taint Analysis for Go",
+    "description": "I'm building a static taint analysis package for Go."
+}

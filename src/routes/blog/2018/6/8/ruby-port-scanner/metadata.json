@@ -1,0 +1,4 @@
+{
+    "title": "Building a High-Performance Asynchronous Port Scanner with Ruby",
+    "description": "Exploring Ruby's async/await capabilities with the Socketry project to build a fast, single-threaded port scanner using Fibers and modern async I/O."
+}

@@ -1,0 +1,4 @@
+{
+    "title": "Go Static Analysis with SSA",
+    "description": "Deep dive into Go's SSA package and how to use it for static analysis."
+}

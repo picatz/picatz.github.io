@@ -1,0 +1,38 @@
+{
+  "name": "SvelteKit Development",
+  "image": "node:20-bullseye",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "svelte.svelte-vscode",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-eslint"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": true,
+        "[svelte]": {
+          "editor.defaultFormatter": "svelte.svelte-vscode"
+        },
+        "[javascript]": {
+          "editor.defaultFormatter": "svelte.svelte-vscode"
+        },
+        "[typescript]": {
+          "editor.defaultFormatter": "svelte.svelte-vscode"
+        }
+      }
+    }
+  },
+  "forwardPorts": [
+    5173
+  ],
+  "portsAttributes": {
+    "5173": {
+      "label": "SvelteKit Dev Server",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "npm install",
+  "remoteUser": "node"
+}
