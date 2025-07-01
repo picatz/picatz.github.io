@@ -822,16 +822,16 @@
 						</div>
 					</a>
 
-					<!-- CVE-2022-38323 (High - 8.6) -->
+					<!-- CVE-2022-30323 (High - 8.6) -->
 					<a
-						href="https://nvd.nist.gov/vuln/detail/CVE-2022-38323"
+						href="https://nvd.nist.gov/vuln/detail/CVE-2022-30323"
 						target="_blank"
 						rel="noopener noreferrer"
 						class="group relative overflow-hidden bg-gradient-to-br from-red-100 to-red-200 dark:from-red-900/30 dark:to-red-800/20 border border-red-300 dark:border-red-600 rounded-lg p-4 hover:shadow-md hover:shadow-red-200/50 dark:hover:shadow-red-900/20 transition-all duration-300 cursor-pointer before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-700 hover:before:translate-x-[100%]"
 					>
 						<div class="relative z-10 flex justify-between items-center">
 							<span class="font-mono text-sm text-slate-700 dark:text-slate-300"
-								>CVE-2022-38323</span
+								>CVE-2022-30323</span
 							>
 							<span
 								class="px-2 py-1 bg-gradient-to-r from-red-200 to-red-300 dark:from-red-700/50 dark:to-red-600/40 text-red-900 dark:text-red-100 rounded text-xs font-medium shadow-sm"
