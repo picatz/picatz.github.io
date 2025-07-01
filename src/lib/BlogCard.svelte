@@ -3,21 +3,58 @@
 	export let featured = false;
 	export let className = '';
 
-	// Format date nicely
-	$: formattedDate = new Date(`${post.month} ${post.day}, ${post.year}`).toLocaleDateString(
-		'en-US',
-		{
-			year: 'numeric',
-			month: 'short',
-			day: 'numeric'
+	// Format date nicely - handle both numeric and string month values
+	$: formattedDate = (() => {
+		try {
+			// If we have a dateObj, use it directly
+			if (post.dateObj) {
+				return post.dateObj.toLocaleDateString('en-US', {
+					year: 'numeric',
+					month: 'short',
+					day: 'numeric'
+				});
+			}
+			
+			// Create date from numeric values
+			const dateObj = new Date(post.year, post.month - 1, post.day);
+			
+			// Check if date is valid
+			if (isNaN(dateObj.getTime())) {
+				return `${post.month}/${post.day}/${post.year}`;
+			}
+			
+			return dateObj.toLocaleDateString('en-US', {
+				year: 'numeric',
+				month: 'short',
+				day: 'numeric'
+			});
+		} catch (error) {
+			// Fallback to simple format if anything goes wrong
+			return `${post.month}/${post.day}/${post.year}`;
 		}
-	);
+	})();
+
+	// Create ISO date string for datetime attribute
+	$: isoDate = (() => {
+		try {
+			if (post.dateObj) {
+				return post.dateObj.toISOString().split('T')[0];
+			}
+			const dateObj = new Date(post.year, post.month - 1, post.day);
+			if (isNaN(dateObj.getTime())) {
+				return `${post.year}-${String(post.month).padStart(2, '0')}-${String(post.day).padStart(2, '0')}`;
+			}
+			return dateObj.toISOString().split('T')[0];
+		} catch (error) {
+			return `${post.year}-${String(post.month).padStart(2, '0')}-${String(post.day).padStart(2, '0')}`;
+		}
+	})();
 </script>
 
 <button
 	type="button"
 	class="group card-hover {className} {featured
-		? 'col-span-full lg:col-span-2'
+		? 'col-span-full'
 		: ''} text-left w-full h-full p-0 bg-transparent border-0 focus:outline-none"
 	on:click={() => (window.location.href = `/blog/${post.slug}`)}
 	on:keydown={(e) => e.key === 'Enter' && (window.location.href = `/blog/${post.slug}`)}
@@ -33,20 +70,20 @@
 			? ''
 			: 'group-hover:border-blue-300 dark:group-hover:border-blue-600'}"
 	>
-		<div class="p-6 {featured ? 'lg:p-8' : ''} h-full flex flex-col">
+		<div class="p-4 sm:p-6 {featured ? 'lg:p-8' : ''} h-full flex flex-col">
 			<!-- Header with date -->
-			<div class="flex items-center justify-between mb-4">
-				<div class="flex items-center space-x-3">
+			<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 {featured ? 'gap-2 sm:gap-0' : 'gap-2'}">
+				<div class="flex flex-col {featured ? 'sm:flex-row' : ''} {featured ? 'sm:items-center' : ''} {featured ? 'sm:space-x-3' : ''} space-y-2 {featured ? 'sm:space-y-0' : ''}">
 					{#if featured}
 						<span
-							class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+							class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-blue-600 to-purple-600 text-white w-fit"
 						>
 							<i class="fas fa-star mr-1"></i>
 							Featured
 						</span>
 					{/if}
 					<time
-						datetime="{post.year}-{post.month.padStart(2, '0')}-{post.day.padStart(2, '0')}"
+						datetime={isoDate}
 						class="text-sm text-slate-500 dark:text-slate-400 font-medium"
 					>
 						{formattedDate}
@@ -118,7 +155,13 @@
 		display: flex;
 		width: 100%;
 		height: 100%;
-		min-height: 280px;
+		min-height: 260px;
+	}
+
+	@media (min-width: 640px) {
+		button {
+			min-height: 280px;
+		}
 	}
 
 	.card-hover {

@@ -275,9 +275,9 @@
 
 <!-- Blog Section -->
 <section id="blog" class="py-24 bg-white dark:bg-slate-950">
-	<div class="max-w-6xl mx-auto px-6">
+	<div class="max-w-6xl mx-auto px-4 sm:px-6">
 		<!-- Section Header -->
-		<div class="text-center mb-16">
+		<div class="text-center mb-12 sm:mb-16">
 			<h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Blog</h2>
 			<p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-8">
 				Thoughts on cybersecurity, software, and more.
@@ -291,9 +291,9 @@
 			{#if posts && posts.length > 0}
 				<!-- Featured Post -->
 				{#if currentPage === 1 && posts[0]}
-					<div class="mb-16">
+					<div class="mb-12 sm:mb-16">
 						<div
-							class="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-slate-800 dark:to-slate-700 rounded-3xl p-8 border border-slate-200 dark:border-slate-600"
+							class="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-slate-800 dark:to-slate-700 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-slate-200 dark:border-slate-600"
 						>
 							<BlogCard
 								post={posts[0]}
@@ -305,7 +305,7 @@
 				{/if}
 
 				<!-- Regular Posts Grid -->
-				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr mb-12">
+				<div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 auto-rows-fr mb-12">
 					{#each posts.slice((currentPage - 1) * pageSize + (currentPage === 1 ? 1 : 0), currentPage * pageSize + (currentPage === 1 ? 1 : 0)) as post}
 						<BlogCard {post} />
 					{/each}
@@ -313,13 +313,13 @@
 
 				<!-- Pagination -->
 				{#if posts.length > pageSize + 1}
-					<div class="flex flex-col items-center space-y-6">
+					<div class="flex flex-col items-center space-y-4 sm:space-y-6">
 						<!-- Page Navigation -->
-						<div class="flex items-center space-x-2">
+						<div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-2">
 							<button
 								on:click={prevPage}
 								disabled={currentPage === 1}
-								class="btn-secondary disabled:opacity-50 disabled:cursor-not-allowed"
+								class="btn-secondary disabled:opacity-50 disabled:cursor-not-allowed text-sm px-3 py-2"
 								aria-label="Previous page"
 							>
 								<i class="fas fa-chevron-left mr-2"></i>
@@ -331,20 +331,20 @@
 								{#each Array(Math.ceil((posts.length - 1) / pageSize)) as _, i}
 									{#if i + 1 === currentPage}
 										<button
-											class="w-10 h-10 rounded-lg bg-blue-600 text-white font-medium"
+											class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-blue-600 text-white font-medium text-sm"
 											aria-current="page"
 										>
 											{i + 1}
 										</button>
-									{:else if Math.abs(i + 1 - currentPage) <= 2 || i === 0 || i === Math.ceil((posts.length - 1) / pageSize) - 1}
+									{:else if Math.abs(i + 1 - currentPage) <= 1 || i === 0 || i === Math.ceil((posts.length - 1) / pageSize) - 1}
 										<button
 											on:click={() => goToPage(i + 1)}
-											class="w-10 h-10 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors duration-200"
+											class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors duration-200 text-sm"
 										>
 											{i + 1}
 										</button>
-									{:else if Math.abs(i + 1 - currentPage) === 3}
-										<span class="px-2 text-slate-400">...</span>
+									{:else if Math.abs(i + 1 - currentPage) === 2}
+										<span class="px-1 sm:px-2 text-slate-400 text-sm">...</span>
 									{/if}
 								{/each}
 							</div>
@@ -352,7 +352,7 @@
 							<button
 								on:click={nextPage}
 								disabled={currentPage === Math.ceil((posts.length - 1) / pageSize)}
-								class="btn-secondary disabled:opacity-50 disabled:cursor-not-allowed"
+								class="btn-secondary disabled:opacity-50 disabled:cursor-not-allowed text-sm px-3 py-2"
 								aria-label="Next page"
 							>
 								Next
@@ -361,7 +361,7 @@
 						</div>
 
 						<!-- Page Info -->
-						<p class="text-sm text-slate-500 dark:text-slate-400">
+						<p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 text-center">
 							{#if currentPage === 1}
 								Showing 1 to {Math.min(pageSize + 1, posts.length)} of {posts.length} posts
 							{:else}

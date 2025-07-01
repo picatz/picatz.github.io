@@ -15,20 +15,28 @@ export const listBlogPosts = async () => {
       const month = path.split('/')[5];
       const day = path.split('/')[6];
 
-      const date = new Date(`${month} ${day}, ${year}`).toLocaleDateString(undefined, { 
+      // Handle different import formats (ES modules vs JSON)
+      const metadataContent = metadata && typeof metadata === 'object' && 'default' in metadata 
+        ? metadata.default 
+        : metadata;
+      
+      // Create date properly by parsing the numeric values
+      const dateObj = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+      const date = dateObj.toLocaleDateString('en-US', { 
         month: 'short', 
         day: 'numeric', 
         year: 'numeric'
       });
 
       return {
-        title: metadata.title,
-        description: metadata.description,
+        title: (metadataContent && metadataContent['title']) || 'Untitled',
+        description: (metadataContent && metadataContent['description']) || 'No description available',
         slug: `${year}/${month}/${day}/${slug}`,
-        day,
-        month,
-        year,
+        day: parseInt(day),
+        month: parseInt(month),
+        year: parseInt(year),
         date,
+        dateObj // Add the actual date object for easier comparison
       };
     })
   );
@@ -48,7 +56,6 @@ export const listBlogPosts = async () => {
  * @returns {number} The comparison result.
  */
 function compareDates(a, b) {
-  const dateA = new Date(`${a.month} ${a.day}, ${a.year}`);
-  const dateB = new Date(`${b.month} ${b.day}, ${b.year}`);
-  return +dateB - +dateA;
+  // Use the dateObj for more reliable comparison
+  return b.dateObj.getTime() - a.dateObj.getTime();
 }
