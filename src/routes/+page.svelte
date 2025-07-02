@@ -3,8 +3,6 @@
 	import LoadingSpinner from '$lib/LoadingSpinner.svelte';
 	import Footer from '$lib/Footer.svelte';
 
-	
-
 	/**
 	 * @typedef {Object} Props
 	 * @property {import('./$types').PageData} data
@@ -67,26 +65,129 @@
 			class="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 dark:from-slate-950 dark:via-blue-950/20 dark:to-purple-950/20"
 		></div>
 
-		<!-- Refined crystalline orbs with cleaner definition -->
+		<!-- Enhanced crystalline orbs positioned around edges -->
 		<div class="absolute inset-0 pointer-events-none">
-			<!-- Primary crystalline orb -->
+			<!-- Primary large orbs -->
+			<!-- Top left corner orb -->
 			<div
-				class="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-500/20 via-purple-500/15 to-transparent rounded-full blur-3xl animate-fluid-drift"
+				class="absolute -top-24 -left-24 w-80 h-80 bg-gradient-to-br from-blue-500/25 via-cyan-400/18 to-transparent rounded-full blur-3xl animate-fluid-drift"
 			></div>
 
-			<!-- Secondary crystalline orb -->
+			<!-- Top right corner orb -->
 			<div
-				class="absolute top-1/3 right-1/4 w-80 h-80 bg-gradient-to-tr from-purple-500/18 via-emerald-500/12 to-transparent rounded-full blur-2xl animate-fluid-drift animation-delay-3000"
+				class="absolute -top-32 -right-32 w-96 h-96 bg-gradient-to-bl from-purple-500/22 via-violet-400/16 to-transparent rounded-full blur-3xl animate-fluid-drift animation-delay-2000"
 			></div>
 
-			<!-- Tertiary crystalline orb -->
+			<!-- Bottom left edge orb -->
 			<div
-				class="absolute bottom-1/4 left-1/3 w-64 h-64 bg-gradient-to-tl from-emerald-500/15 via-blue-500/10 to-transparent rounded-full blur-xl animate-fluid-drift animation-delay-6000"
+				class="absolute -bottom-20 -left-20 w-72 h-72 bg-gradient-to-tr from-emerald-500/20 via-teal-400/14 to-transparent rounded-full blur-2xl animate-fluid-drift animation-delay-4000"
 			></div>
 
-			<!-- Core ambient light -->
+			<!-- Bottom right corner orb -->
 			<div
-				class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-56 h-56 bg-gradient-to-r from-indigo-400/12 via-teal-400/8 to-transparent rounded-full blur-3xl animate-gentle-pulse"
+				class="absolute -bottom-28 -right-28 w-88 h-88 bg-gradient-to-tl from-indigo-500/23 via-blue-400/17 to-transparent rounded-full blur-3xl animate-fluid-drift animation-delay-6000"
+			></div>
+
+			<!-- Left edge mid orb -->
+			<div
+				class="absolute top-1/3 -left-16 w-64 h-64 bg-gradient-to-r from-cyan-500/18 via-blue-400/12 to-transparent rounded-full blur-2xl animate-fluid-drift animation-delay-1000"
+			></div>
+
+			<!-- Right edge mid orb -->
+			<div
+				class="absolute top-2/3 -right-16 w-56 h-56 bg-gradient-to-l from-violet-500/19 via-purple-400/13 to-transparent rounded-full blur-xl animate-fluid-drift animation-delay-5000"
+			></div>
+
+			<!-- Top edge center orb -->
+			<div
+				class="absolute -top-16 left-1/2 transform -translate-x-1/2 w-48 h-48 bg-gradient-to-b from-rose-400/16 via-pink-300/11 to-transparent rounded-full blur-2xl animate-fluid-drift animation-delay-3000"
+			></div>
+
+			<!-- Bottom edge center orb -->
+			<div
+				class="absolute -bottom-12 left-1/3 w-40 h-40 bg-gradient-to-t from-amber-400/15 via-yellow-300/10 to-transparent rounded-full blur-xl animate-fluid-drift animation-delay-7000"
+			></div>
+
+			<!-- Smaller bright accent orbs -->
+			<!-- Top edge small bright orb -->
+			<div
+				class="absolute -top-8 left-1/4 w-24 h-24 bg-gradient-to-br from-cyan-400/35 via-blue-300/25 to-transparent rounded-full blur-lg animate-fluid-drift animation-delay-1500"
+			></div>
+
+			<!-- Top right small bright orb -->
+			<div
+				class="absolute top-12 -right-8 w-20 h-20 bg-gradient-to-bl from-fuchsia-400/40 via-purple-300/28 to-transparent rounded-full blur-md animate-fluid-drift animation-delay-2500"
+			></div>
+
+			<!-- Left edge small bright orb -->
+			<div
+				class="absolute top-1/2 -left-8 w-28 h-28 bg-gradient-to-r from-emerald-400/32 via-teal-300/22 to-transparent rounded-full blur-lg animate-fluid-drift animation-delay-3500"
+			></div>
+
+			<!-- Right edge upper small bright orb -->
+			<div
+				class="absolute top-1/4 -right-6 w-16 h-16 bg-gradient-to-l from-violet-400/38 via-indigo-300/26 to-transparent rounded-full blur-md animate-fluid-drift animation-delay-4500"
+			></div>
+
+			<!-- Bottom left small bright orb -->
+			<div
+				class="absolute -bottom-6 left-1/5 w-22 h-22 bg-gradient-to-tr from-lime-400/36 via-green-300/24 to-transparent rounded-full blur-md animate-fluid-drift animation-delay-5500"
+			></div>
+
+			<!-- Bottom right small bright orb -->
+			<div
+				class="absolute bottom-16 -right-4 w-18 h-18 bg-gradient-to-tl from-rose-400/42 via-pink-300/30 to-transparent rounded-full blur-md animate-fluid-drift animation-delay-6500"
+			></div>
+
+			<!-- Mid-left small bright orb -->
+			<div
+				class="absolute top-3/4 -left-6 w-20 h-20 bg-gradient-to-r from-sky-400/34 via-cyan-300/24 to-transparent rounded-full blur-md animate-fluid-drift animation-delay-7500"
+			></div>
+
+			<!-- Top center small bright orb -->
+			<div
+				class="absolute -top-4 left-2/3 w-14 h-14 bg-gradient-to-b from-indigo-400/40 via-blue-300/28 to-transparent rounded-full blur-sm animate-fluid-drift animation-delay-8500"
+			></div>
+
+			<!-- Bottom center small bright orb -->
+			<div
+				class="absolute -bottom-4 left-2/3 w-16 h-16 bg-gradient-to-t from-orange-400/38 via-amber-300/26 to-transparent rounded-full blur-sm animate-fluid-drift animation-delay-9500"
+			></div>
+
+			<!-- Additional edge orbs for more coverage -->
+			<!-- Top left small accent -->
+			<div
+				class="absolute -top-6 left-1/6 w-12 h-12 bg-gradient-to-br from-teal-400/42 via-cyan-300/30 to-transparent rounded-full blur-sm animate-fluid-drift animation-delay-10500"
+			></div>
+
+			<!-- Top right small accent -->
+			<div
+				class="absolute -top-3 right-1/5 w-10 h-10 bg-gradient-to-bl from-pink-400/45 via-rose-300/32 to-transparent rounded-full blur-md animate-fluid-drift animation-delay-11500"
+			></div>
+
+			<!-- Bottom left small accent -->
+			<div
+				class="absolute -bottom-8 left-1/8 w-14 h-14 bg-gradient-to-tr from-yellow-400/40 via-lime-300/28 to-transparent rounded-full blur-sm animate-fluid-drift animation-delay-12500"
+			></div>
+
+			<!-- Bottom right small accent -->
+			<div
+				class="absolute -bottom-3 right-1/6 w-12 h-12 bg-gradient-to-tl from-indigo-400/44 via-violet-300/31 to-transparent rounded-full blur-sm animate-fluid-drift animation-delay-13500"
+			></div>
+
+			<!-- Left edge additional -->
+			<div
+				class="absolute top-1/6 -left-4 w-18 h-18 bg-gradient-to-r from-emerald-400/38 via-green-300/26 to-transparent rounded-full blur-md animate-fluid-drift animation-delay-14500"
+			></div>
+
+			<!-- Right edge additional -->
+			<div
+				class="absolute top-5/6 -right-3 w-16 h-16 bg-gradient-to-l from-purple-400/41 via-fuchsia-300/29 to-transparent rounded-full blur-sm animate-fluid-drift animation-delay-15500"
+			></div>
+
+			<!-- Subtle center ambient glow -->
+			<div
+				class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-r from-indigo-400/8 via-purple-300/6 to-transparent rounded-full blur-3xl animate-gentle-pulse"
 			></div>
 		</div>
 
@@ -655,16 +756,96 @@
 		animation-delay: 0.9s;
 	}
 
+	.animation-delay-1000 {
+		animation-delay: 1s;
+	}
+
 	.animation-delay-1200 {
 		animation-delay: 1.2s;
+	}
+
+	.animation-delay-1500 {
+		animation-delay: 1.5s;
+	}
+
+	.animation-delay-2000 {
+		animation-delay: 2s;
+	}
+
+	.animation-delay-2500 {
+		animation-delay: 2.5s;
 	}
 
 	.animation-delay-3000 {
 		animation-delay: 3s;
 	}
 
+	.animation-delay-3500 {
+		animation-delay: 3.5s;
+	}
+
+	.animation-delay-4000 {
+		animation-delay: 4s;
+	}
+
+	.animation-delay-4500 {
+		animation-delay: 4.5s;
+	}
+
+	.animation-delay-5000 {
+		animation-delay: 5s;
+	}
+
+	.animation-delay-5500 {
+		animation-delay: 5.5s;
+	}
+
 	.animation-delay-6000 {
 		animation-delay: 6s;
+	}
+
+	.animation-delay-6500 {
+		animation-delay: 6.5s;
+	}
+
+	.animation-delay-7000 {
+		animation-delay: 7s;
+	}
+
+	.animation-delay-7500 {
+		animation-delay: 7.5s;
+	}
+
+	.animation-delay-8500 {
+		animation-delay: 8.5s;
+	}
+
+	.animation-delay-9500 {
+		animation-delay: 9.5s;
+	}
+
+	.animation-delay-10500 {
+		animation-delay: 10.5s;
+	}
+
+	.animation-delay-11500 {
+		animation-delay: 11.5s;
+	}
+
+	.animation-delay-12500 {
+		animation-delay: 12.5s;
+	}
+
+	.animation-delay-13500 {
+		animation-delay: 13.5s;
+	}
+
+	.animation-delay-14500 {
+		animation-delay: 14.5s;
+	}
+
+	.animation-delay-15500 {
+		animation-delay: 15.5s;
 	}
 
 	/* Initial states for animations */
