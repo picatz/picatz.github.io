@@ -1,17 +1,5 @@
 <script>
 	const currentYear = new Date().getFullYear();
-
-	const socialLinks = [
-		{ href: '/rss.xml', icon: 'fas fa-rss', label: 'RSS Feed' },
-		{ href: 'https://twitter.com/KentGruber', icon: 'fab fa-twitter', label: 'Twitter' },
-		{ href: 'https://medium.com/@KentGruber', icon: 'fab fa-medium', label: 'Medium' },
-		{
-			href: 'https://www.linkedin.com/in/kent-gruber-80ab0a67/',
-			icon: 'fab fa-linkedin',
-			label: 'LinkedIn'
-		},
-		{ href: 'https://github.com/picatz', icon: 'fab fa-github', label: 'GitHub' }
-	];
 </script>
 
 <footer class="bg-slate-900 text-slate-300 mt-24">
@@ -40,20 +28,54 @@
 			<div class="space-y-6">
 				<h3 class="text-xl font-bold text-white">Connect</h3>
 				<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-					{#each socialLinks.slice(1) as link}
-						<a
-							href={link.href}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="flex items-center space-x-3 text-slate-400 hover:text-white transition-colors duration-200 p-3 rounded-lg hover:bg-slate-800/50 group"
-							aria-label={link.label}
-						>
-							<i
-								class="{link.icon} text-lg w-5 group-hover:scale-110 transition-transform duration-200"
-							></i>
-							<span class="font-medium">{link.label}</span>
-						</a>
-					{/each}
+					<a
+						href="https://twitter.com/KentGruber"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="flex items-center space-x-3 text-slate-400 hover:text-white transition-colors duration-200 p-3 rounded-lg hover:bg-slate-800/50 group"
+						aria-label="Twitter"
+					>
+						<i
+							class="fab fa-twitter text-lg w-5 group-hover:scale-110 transition-transform duration-200"
+						></i>
+						<span class="font-medium">Twitter</span>
+					</a>
+					<a
+						href="https://medium.com/@KentGruber"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="flex items-center space-x-3 text-slate-400 hover:text-white transition-colors duration-200 p-3 rounded-lg hover:bg-slate-800/50 group"
+						aria-label="Medium"
+					>
+						<i
+							class="fab fa-medium text-lg w-5 group-hover:scale-110 transition-transform duration-200"
+						></i>
+						<span class="font-medium">Medium</span>
+					</a>
+					<a
+						href="https://www.linkedin.com/in/kent-gruber-80ab0a67/"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="flex items-center space-x-3 text-slate-400 hover:text-white transition-colors duration-200 p-3 rounded-lg hover:bg-slate-800/50 group"
+						aria-label="LinkedIn"
+					>
+						<i
+							class="fab fa-linkedin text-lg w-5 group-hover:scale-110 transition-transform duration-200"
+						></i>
+						<span class="font-medium">LinkedIn</span>
+					</a>
+					<a
+						href="https://github.com/picatz"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="flex items-center space-x-3 text-slate-400 hover:text-white transition-colors duration-200 p-3 rounded-lg hover:bg-slate-800/50 group"
+						aria-label="GitHub"
+					>
+						<i
+							class="fab fa-github text-lg w-5 group-hover:scale-110 transition-transform duration-200"
+						></i>
+						<span class="font-medium">GitHub</span>
+					</a>
 				</div>
 			</div>
 		</div>

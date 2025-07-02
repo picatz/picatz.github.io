@@ -1,7 +1,7 @@
 <script>
 	import { slide } from 'svelte/transition';
 
-	let isMenuOpen = false;
+	let isMenuOpen = $state(false);
 
 	function toggleMenu() {
 		isMenuOpen = !isMenuOpen;
@@ -187,7 +187,7 @@
 			<!-- Mobile menu button -->
 			<div class="md:hidden flex items-center">
 				<button
-					on:click={toggleMenu}
+					onclick={toggleMenu}
 					class="p-2.5 rounded-lg text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200"
 					aria-label="Toggle menu"
 					aria-expanded={isMenuOpen}
@@ -221,7 +221,7 @@
 				<a
 					href="/"
 					class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200"
-					on:click={() => (isMenuOpen = false)}
+					onclick={() => (isMenuOpen = false)}
 				>
 					<svg
 						class="h-5 w-5"
@@ -242,7 +242,7 @@
 				<a
 					href="/#blog"
 					class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200"
-					on:click={() => (isMenuOpen = false)}
+					onclick={() => (isMenuOpen = false)}
 				>
 					<svg
 						class="h-5 w-5"
@@ -266,7 +266,7 @@
 					rel="noopener noreferrer"
 					class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200"
 					aria-label="GitHub Profile"
-					on:click={() => (isMenuOpen = false)}
+					onclick={() => (isMenuOpen = false)}
 				>
 					<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
 						<path

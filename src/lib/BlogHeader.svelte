@@ -1,9 +1,21 @@
 <script>
-	export let title = '';
-	export let subtitle = '';
-	export let date = '';
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} [title]
+	 * @property {string} [subtitle]
+	 * @property {string} [date]
+	 * @property {import('svelte').Snippet} [children]
+	 */
 
-	$: humanDate = (() => {
+	/** @type {Props} */
+	let {
+		title = '',
+		subtitle = '',
+		date = '',
+		children
+	} = $props();
+
+	let humanDate = $derived((() => {
 		try {
 			// Handle different date formats
 			let dateObj;
@@ -41,7 +53,7 @@
 			// Fallback: return the original date string
 			return date;
 		}
-	})();
+	})());
 </script>
 
 <header class="mb-12">
@@ -76,10 +88,10 @@
 	</div>
 
 	<!-- Article summary/description -->
-	{#if $$slots.default}
+	{#if children}
 		<div class="mt-8 p-6 bg-blue-50 border border-blue-100 rounded-xl">
 			<div class="prose prose-slate max-w-none">
-				<slot />
+				{@render children?.()}
 			</div>
 		</div>
 	{/if}

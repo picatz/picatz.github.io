@@ -9,7 +9,7 @@
 	import Graph from '$lib/Graph.svelte';
 	import * as d3 from 'd3';
 
-	let graphComponent;
+	let graphComponent = $state();
 </script>
 
 <BlogPost>
@@ -105,13 +105,13 @@ func run() {
 					<a href="https://pkg.go.dev/net/http#Request" class="text-blue-500"
 						><code
 							class="hover:bg-yellow-200 hover:text-black transition-colors duration-200 px-1 py-0.5 rounded cursor-pointer"
-							on:mouseenter={() =>
+							onmouseenter={() =>
 								graphComponent?.highlightNodeWithSignature(
 									'(*net/http.ServeMux).HandleFunc',
 									'*net/http.Request',
 									'(*net/http.ServeMux).HandleFunc(pattern string, handler func(net/http.ResponseWriter, *net/http.Request))'
 								)}
-							on:mouseleave={() => graphComponent?.resetHighlight()}>*net/http.Request</code
+							onmouseleave={() => graphComponent?.resetHighlight()}>*net/http.Request</code
 						></a
 					>
 				</p>
@@ -124,14 +124,14 @@ func run() {
 				<div
 					class="text-center overflow-hidden cursor-pointer hover:bg-blue-50 transition-colors duration-200 p-2 rounded-lg group"
 					role="button"
-					on:mouseenter={() =>
+					onmouseenter={() =>
 						graphComponent?.highlightPath([
 							'(*net/http.ServeMux).HandleFunc',
 							'run$1',
 							'business',
 							'(*database/sql.DB).Query'
 						])}
-					on:mouseleave={() => graphComponent?.resetHighlight()}
+					onmouseleave={() => graphComponent?.resetHighlight()}
 				>
 					<div class="flex items-center justify-center space-x-2">
 						<i class="fas fa-play text-blue-500 text-sm group-hover:text-blue-700 transition-colors"
@@ -157,8 +157,8 @@ func run() {
 					<a href="https://pkg.go.dev/net/http#Request" class="text-blue-500"
 						><code
 							class="hover:bg-yellow-200 hover:text-black transition-colors duration-200 px-1 py-0.5 rounded cursor-pointer"
-							on:mouseenter={() => graphComponent?.highlightNode('(*database/sql.DB).Query')}
-							on:mouseleave={() => graphComponent?.resetHighlight()}>(*database/sql.DB).Query</code
+							onmouseenter={() => graphComponent?.highlightNode('(*database/sql.DB).Query')}
+							onmouseleave={() => graphComponent?.resetHighlight()}>(*database/sql.DB).Query</code
 						></a
 					>
 				</p>

@@ -1,16 +1,16 @@
 <script>
 	import { listBlogPosts } from '$lib/utils';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { onMount } from 'svelte';
 
-	let blogPosts = [];
+	let blogPosts = $state([]);
 
 	// Get 3 random blog posts, not including the current one
 	// (using the current slug) and the most recent one
 	async function fetchBlogPosts() {
 		try {
 			blogPosts = await listBlogPosts();
-			blogPosts = blogPosts.filter((post) => '/blog/' + post.slug !== $page.route.id).slice(0, 2);
+			blogPosts = blogPosts.filter((post) => '/blog/' + post.slug !== page.route.id).slice(0, 2);
 		} catch (error) {
 			console.error(error);
 		}

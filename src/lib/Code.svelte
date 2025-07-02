@@ -1,4 +1,6 @@
 <script>
+	import { run } from 'svelte/legacy';
+
 	import { onMount } from 'svelte';
 	import Prism from 'prismjs';
 	import 'prismjs/themes/prism-tomorrow.css';
@@ -9,18 +11,28 @@
 	import 'prismjs/components/prism-json.js';
 	import 'prismjs/components/prism-ruby.js';
 
-	export let title = '';
-	export let copyable = true;
-	export let language = 'go'; // Default to Go since this is a Go-focused blog
-	export let code = '';
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} [title]
+	 * @property {boolean} [copyable]
+	 * @property {string} [language] - Default to Go since this is a Go-focused blog
+	 * @property {string} [code]
+	 * @property {import('svelte').Snippet} [children]
+	 */
 
-	let codeElement;
-	let copied = false;
-	let highlightedCode = '';
+	/** @type {Props} */
+	let {
+		title = '',
+		copyable = true,
+		language = 'go',
+		code = '',
+		children
+	} = $props();
 
-	$: if (code) {
-		highlightCode();
-	}
+	let codeElement = $state();
+	let copied = $state(false);
+	let highlightedCode = $state('');
+
 
 	function highlightCode() {
 		if (code && language) {
@@ -52,6 +64,11 @@
 			console.error('Failed to copy text: ', err);
 		}
 	}
+	run(() => {
+		if (code) {
+			highlightCode();
+		}
+	});
 </script>
 
 <div class="bg-slate-900 rounded-xl shadow-lg overflow-hidden border border-slate-700">
@@ -72,7 +89,7 @@
 
 			{#if copyable}
 				<button
-					on:click={copyToClipboard}
+					onclick={copyToClipboard}
 					class="flex items-center space-x-2 px-3 py-1.5 text-xs font-medium text-slate-400 hover:text-white bg-slate-700 hover:bg-slate-600 rounded-lg transition-colors duration-200"
 					disabled={copied}
 				>
@@ -95,8 +112,7 @@
 				bind:this={codeElement}
 				class="text-slate-100 font-mono text-sm leading-relaxed">{@html highlightedCode}</pre>
 		{:else}
-			<pre bind:this={codeElement} class="text-slate-100 font-mono text-sm leading-relaxed"><slot
-				/></pre>
+			<pre bind:this={codeElement} class="text-slate-100 font-mono text-sm leading-relaxed">{@render children?.()}</pre>
 		{/if}
 	</div>
 </div>

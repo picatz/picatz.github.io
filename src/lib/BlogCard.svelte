@@ -1,10 +1,16 @@
 <script>
-	export let post;
-	export let featured = false;
-	export let className = '';
+	/**
+	 * @typedef {Object} Props
+	 * @property {any} post
+	 * @property {boolean} [featured]
+	 * @property {string} [className]
+	 */
+
+	/** @type {Props} */
+	let { post, featured = false, className = '' } = $props();
 
 	// Format date nicely - handle both numeric and string month values
-	$: formattedDate = (() => {
+	let formattedDate = $derived((() => {
 		try {
 			// If we have a dateObj, use it directly
 			if (post.dateObj) {
@@ -32,10 +38,10 @@
 			// Fallback to simple format if anything goes wrong
 			return `${post.month}/${post.day}/${post.year}`;
 		}
-	})();
+	})());
 
 	// Create ISO date string for datetime attribute
-	$: isoDate = (() => {
+	let isoDate = $derived((() => {
 		try {
 			if (post.dateObj) {
 				return post.dateObj.toISOString().split('T')[0];
@@ -48,7 +54,7 @@
 		} catch (error) {
 			return `${post.year}-${String(post.month).padStart(2, '0')}-${String(post.day).padStart(2, '0')}`;
 		}
-	})();
+	})());
 </script>
 
 <button
@@ -56,8 +62,8 @@
 	class="group card-hover {className} {featured
 		? 'col-span-full'
 		: ''} text-left w-full h-full p-0 bg-transparent border-0 focus:outline-none"
-	on:click={() => (window.location.href = `/blog/${post.slug}`)}
-	on:keydown={(e) => e.key === 'Enter' && (window.location.href = `/blog/${post.slug}`)}
+	onclick={() => (window.location.href = `/blog/${post.slug}`)}
+	onkeydown={(e) => e.key === 'Enter' && (window.location.href = `/blog/${post.slug}`)}
 >
 	<article
 		class="h-full {className.includes('bg-transparent')

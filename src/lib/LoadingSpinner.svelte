@@ -1,6 +1,12 @@
 <script>
-	export let text = 'Loading...';
-	export let size = 'md'; // 'sm', 'md', 'lg'
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} [text]
+	 * @property {string} [size] - 'sm', 'md', 'lg'
+	 */
+
+	/** @type {Props} */
+	let { text = 'Loading...', size = 'md' } = $props();
 
 	const sizeClasses = {
 		sm: 'w-4 h-4',

@@ -3,13 +3,19 @@
 	import LoadingSpinner from '$lib/LoadingSpinner.svelte';
 	import Footer from '$lib/Footer.svelte';
 
-	/** @type {import('./$types').PageData} */
-	export let data;
+	
 
-	export let currentPage = 1;
-	export let pageSize = 3;
+	/**
+	 * @typedef {Object} Props
+	 * @property {import('./$types').PageData} data
+	 * @property {number} [currentPage]
+	 * @property {number} [pageSize]
+	 */
 
-	$: posts = data.posts;
+	/** @type {Props} */
+	let { data, currentPage = $bindable(1), pageSize = 3 } = $props();
+
+	let posts = $derived(data.posts);
 
 	async function nextPage() {
 		const totalPages = Math.ceil(((await posts).length - 1) / pageSize);
@@ -182,7 +188,7 @@
 		<!-- Elegant Scroll Invitation -->
 		<div class="mt-16 flex flex-col items-center animate-fade-in-up animation-delay-1200">
 			<button
-				on:click={() => {
+				onclick={() => {
 					document.getElementById('blog')?.scrollIntoView({
 						behavior: 'smooth',
 						block: 'start'
@@ -387,7 +393,7 @@
 						<!-- Page Navigation -->
 						<div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-2">
 							<button
-								on:click={prevPage}
+								onclick={prevPage}
 								disabled={currentPage === 1}
 								class="btn-secondary disabled:opacity-50 disabled:cursor-not-allowed text-sm px-3 py-2"
 								aria-label="Previous page"
@@ -408,7 +414,7 @@
 										</button>
 									{:else if Math.abs(i + 1 - currentPage) <= 1 || i === 0 || i === Math.ceil((posts.length - 1) / pageSize) - 1}
 										<button
-											on:click={() => goToPage(i + 1)}
+											onclick={() => goToPage(i + 1)}
 											class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors duration-200 text-sm"
 										>
 											{i + 1}
@@ -420,7 +426,7 @@
 							</div>
 
 							<button
-								on:click={nextPage}
+								onclick={nextPage}
 								disabled={currentPage === Math.ceil((posts.length - 1) / pageSize)}
 								class="btn-secondary disabled:opacity-50 disabled:cursor-not-allowed text-sm px-3 py-2"
 								aria-label="Next page"
@@ -461,7 +467,7 @@
 				<p class="text-slate-600 dark:text-slate-400 mb-4">
 					We couldn't load the blog posts. Please try again later.
 				</p>
-				<button on:click={() => window.location.reload()} class="btn-primary">
+				<button onclick={() => window.location.reload()} class="btn-primary">
 					<i class="fas fa-redo mr-2"></i>
 					Try Again
 				</button>

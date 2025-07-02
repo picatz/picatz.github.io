@@ -1,18 +1,28 @@
 <script>
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
-	export let nodes;
-	export let links;
-	export let classes = ['h-96'];
 
-	// functions that are applied to the nodeElements
-	export let nodeFunctions = [];
+	/**
+	 * @typedef {Object} Props
+	 * @property {any} nodes
+	 * @property {any} links
+	 * @property {any} [classes]
+	 * @property {any} [nodeFunctions] - functions that are applied to the nodeElements
+	 * @property {any} [labelFunctions] - functions that are applied to the (node) labelElements
+	 * @property {any} [linkFunctions] - functions that are applied to the linkElements
+	 * @property {import('svelte').Snippet} [children]
+	 */
 
-	// functions that are applied to the (node) labelElements
-	export let labelFunctions = [];
-
-	// functions that are applied to the linkElements
-	export let linkFunctions = [];
+	/** @type {Props} */
+	let {
+		nodes,
+		links,
+		classes = ['h-96'],
+		nodeFunctions = [],
+		labelFunctions = [],
+		linkFunctions = [],
+		children
+	} = $props();
 
 	const canvasID = 'graph' + Math.random().toString(36).substring(7);
 
@@ -340,6 +350,6 @@
 	});
 </script>
 
-<slot />
+{@render children?.()}
 
 <div id={canvasID} class={classes.join(' ')}></div>
