@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { run } from 'svelte/legacy';
 
 	import { onMount } from 'svelte';
@@ -11,28 +11,20 @@
 	import 'prismjs/components/prism-json.js';
 	import 'prismjs/components/prism-ruby.js';
 
-	/**
-	 * @typedef {Object} Props
-	 * @property {string} [title]
-	 * @property {boolean} [copyable]
-	 * @property {string} [language] - Default to Go since this is a Go-focused blog
-	 * @property {string} [code]
-	 * @property {import('svelte').Snippet} [children]
-	 */
+       /**
+        * @typedef {Object} Props
+        * @property {string} [title]
+        * @property {boolean} [copyable]
+        * @property {string} [language] - Default to Go since this is a Go-focused blog
+        * @property {string} [code]
+        */
 
-	/** @type {Props} */
-	let {
-		title = '',
-		copyable = true,
-		language = 'go',
-		code = '',
-		children
-	} = $props();
+       /** @type {Props} */
+       let { title = '', copyable = true, language = 'go', code = '' } = $props();
 
-	let codeElement = $state();
+       let codeElement: HTMLElement | null = $state();
 	let copied = $state(false);
 	let highlightedCode = $state('');
-
 
 	function highlightCode() {
 		if (code && language) {
@@ -111,8 +103,10 @@
 			<pre
 				bind:this={codeElement}
 				class="text-slate-100 font-mono text-sm leading-relaxed">{@html highlightedCode}</pre>
-		{:else}
-			<pre bind:this={codeElement} class="text-slate-100 font-mono text-sm leading-relaxed">{@render children?.()}</pre>
-		{/if}
-	</div>
+               {:else}
+                       <pre
+                               bind:this={codeElement}
+                               class="text-slate-100 font-mono text-sm leading-relaxed"><slot /></pre>
+               {/if}
+       </div>
 </div>

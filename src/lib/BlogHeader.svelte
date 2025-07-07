@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	/**
 	 * @typedef {Object} Props
 	 * @property {string} [title]
@@ -8,52 +8,49 @@
 	 */
 
 	/** @type {Props} */
-	let {
-		title = '',
-		subtitle = '',
-		date = '',
-		children
-	} = $props();
+	let { title = '', subtitle = '', date = '', children } = $props();
 
-	let humanDate = $derived((() => {
-		try {
-			// Handle different date formats
-			let dateObj;
+	let humanDate = $derived(
+		(() => {
+			try {
+				// Handle different date formats
+				let dateObj;
 
-			if (date.includes('-')) {
-				// Handle formats like "12-29-2022" or "2022-12-29"
-				const parts = date.split('-');
-				if (parts.length === 3) {
-					// Check if it's MM-DD-YYYY or YYYY-MM-DD
-					if (parts[0].length === 4) {
-						// YYYY-MM-DD format
-						dateObj = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
-					} else {
-						// MM-DD-YYYY format
-						dateObj = new Date(parseInt(parts[2]), parseInt(parts[0]) - 1, parseInt(parts[1]));
+				if (date.includes('-')) {
+					// Handle formats like "12-29-2022" or "2022-12-29"
+					const parts = date.split('-');
+					if (parts.length === 3) {
+						// Check if it's MM-DD-YYYY or YYYY-MM-DD
+						if (parts[0].length === 4) {
+							// YYYY-MM-DD format
+							dateObj = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+						} else {
+							// MM-DD-YYYY format
+							dateObj = new Date(parseInt(parts[2]), parseInt(parts[0]) - 1, parseInt(parts[1]));
+						}
 					}
+				} else {
+					// Try parsing as-is
+					dateObj = new Date(date);
 				}
-			} else {
-				// Try parsing as-is
-				dateObj = new Date(date);
-			}
 
-			// Check if date is valid
-			if (dateObj && !isNaN(dateObj.getTime())) {
-				return dateObj.toLocaleDateString('en-US', {
-					year: 'numeric',
-					month: 'long',
-					day: 'numeric'
-				});
-			} else {
+				// Check if date is valid
+				if (dateObj && !isNaN(dateObj.getTime())) {
+					return dateObj.toLocaleDateString('en-US', {
+						year: 'numeric',
+						month: 'long',
+						day: 'numeric'
+					});
+				} else {
+					// Fallback: return the original date string
+					return date;
+				}
+			} catch (error) {
 				// Fallback: return the original date string
 				return date;
 			}
-		} catch (error) {
-			// Fallback: return the original date string
-			return date;
-		}
-	})());
+		})()
+	);
 </script>
 
 <header class="mb-12">

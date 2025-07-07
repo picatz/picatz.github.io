@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	/**
 	 * @typedef {Object} Props
 	 * @property {any} post
@@ -10,51 +10,55 @@
 	let { post, featured = false, className = '' } = $props();
 
 	// Format date nicely - handle both numeric and string month values
-	let formattedDate = $derived((() => {
-		try {
-			// If we have a dateObj, use it directly
-			if (post.dateObj) {
-				return post.dateObj.toLocaleDateString('en-US', {
+	let formattedDate = $derived(
+		(() => {
+			try {
+				// If we have a dateObj, use it directly
+				if (post.dateObj) {
+					return post.dateObj.toLocaleDateString('en-US', {
+						year: 'numeric',
+						month: 'short',
+						day: 'numeric'
+					});
+				}
+
+				// Create date from numeric values
+				const dateObj = new Date(post.year, post.month - 1, post.day);
+
+				// Check if date is valid
+				if (isNaN(dateObj.getTime())) {
+					return `${post.month}/${post.day}/${post.year}`;
+				}
+
+				return dateObj.toLocaleDateString('en-US', {
 					year: 'numeric',
 					month: 'short',
 					day: 'numeric'
 				});
-			}
-
-			// Create date from numeric values
-			const dateObj = new Date(post.year, post.month - 1, post.day);
-
-			// Check if date is valid
-			if (isNaN(dateObj.getTime())) {
+			} catch (error) {
+				// Fallback to simple format if anything goes wrong
 				return `${post.month}/${post.day}/${post.year}`;
 			}
-
-			return dateObj.toLocaleDateString('en-US', {
-				year: 'numeric',
-				month: 'short',
-				day: 'numeric'
-			});
-		} catch (error) {
-			// Fallback to simple format if anything goes wrong
-			return `${post.month}/${post.day}/${post.year}`;
-		}
-	})());
+		})()
+	);
 
 	// Create ISO date string for datetime attribute
-	let isoDate = $derived((() => {
-		try {
-			if (post.dateObj) {
-				return post.dateObj.toISOString().split('T')[0];
-			}
-			const dateObj = new Date(post.year, post.month - 1, post.day);
-			if (isNaN(dateObj.getTime())) {
+	let isoDate = $derived(
+		(() => {
+			try {
+				if (post.dateObj) {
+					return post.dateObj.toISOString().split('T')[0];
+				}
+				const dateObj = new Date(post.year, post.month - 1, post.day);
+				if (isNaN(dateObj.getTime())) {
+					return `${post.year}-${String(post.month).padStart(2, '0')}-${String(post.day).padStart(2, '0')}`;
+				}
+				return dateObj.toISOString().split('T')[0];
+			} catch (error) {
 				return `${post.year}-${String(post.month).padStart(2, '0')}-${String(post.day).padStart(2, '0')}`;
 			}
-			return dateObj.toISOString().split('T')[0];
-		} catch (error) {
-			return `${post.year}-${String(post.month).padStart(2, '0')}-${String(post.day).padStart(2, '0')}`;
-		}
-	})());
+		})()
+	);
 </script>
 
 <button
