@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import BlogCard from '$lib/BlogCard.svelte';
 	import LoadingSpinner from '$lib/LoadingSpinner.svelte';
 	import Footer from '$lib/Footer.svelte';

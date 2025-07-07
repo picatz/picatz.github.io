@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import metadata from './metadata.json';
 	import BlogHeader from '$lib/BlogHeader.svelte';
 	import BlogPost from '$lib/BlogPost.svelte';

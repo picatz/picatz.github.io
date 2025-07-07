@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { slide } from 'svelte/transition';
 
 	let isMenuOpen = $state(false);

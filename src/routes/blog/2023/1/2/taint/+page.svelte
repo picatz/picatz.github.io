@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte';
 	import metadata from './metadata.json';
 	import BlogHeader from '$lib/BlogHeader.svelte';
@@ -6,10 +6,11 @@
 	import Link from '$lib/Link.svelte';
 	import Code from '$lib/Code.svelte';
 	import Panel from '$lib/Panel.svelte';
-	import Graph from '$lib/Graph.svelte';
+import Graph from '$lib/Graph.svelte';
+import type GraphComponent from '$lib/Graph.svelte';
 	import * as d3 from 'd3';
 
-	let graphComponent = $state();
+       let graphComponent: GraphComponent | null = null;
 </script>
 
 <BlogPost>

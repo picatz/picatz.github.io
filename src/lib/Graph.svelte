@@ -1,28 +1,26 @@
-<script>
-	import { onMount } from 'svelte';
-	import * as d3 from 'd3';
+<script lang="ts">
+import { onMount } from 'svelte';
+import * as d3 from 'd3';
 
-	/**
-	 * @typedef {Object} Props
-	 * @property {any} nodes
-	 * @property {any} links
-	 * @property {any} [classes]
-	 * @property {any} [nodeFunctions] - functions that are applied to the nodeElements
-	 * @property {any} [labelFunctions] - functions that are applied to the (node) labelElements
-	 * @property {any} [linkFunctions] - functions that are applied to the linkElements
-	 * @property {import('svelte').Snippet} [children]
-	 */
+/**
+ * @typedef {Object} Props
+ * @property {any} nodes
+ * @property {any} links
+ * @property {any} [classes]
+ * @property {any[]} [nodeFunctions] - functions applied to node elements
+ * @property {any[]} [labelFunctions] - functions applied to label elements
+ * @property {any[]} [linkFunctions] - functions applied to link elements
+ */
 
-	/** @type {Props} */
-	let {
-		nodes,
-		links,
-		classes = ['h-96'],
-		nodeFunctions = [],
-		labelFunctions = [],
-		linkFunctions = [],
-		children
-	} = $props();
+/** @type {Props} */
+let {
+       nodes,
+       links,
+       classes = ['h-96'],
+       nodeFunctions = [],
+       labelFunctions = [],
+       linkFunctions = []
+} = $props();
 
 	const canvasID = 'graph' + Math.random().toString(36).substring(7);
 
@@ -255,11 +253,11 @@
 		}
 	}
 
-	onMount(() => {
-		const forceGraph = d3.select('#' + canvasID);
-
-		let width = forceGraph.node().getBoundingClientRect().width;
-		let height = forceGraph.node().getBoundingClientRect().height;
+       onMount(() => {
+               const forceGraph = d3.select<HTMLElement, unknown>('#' + canvasID);
+               const graphEl = forceGraph.node();
+               let width = graphEl ? graphEl.getBoundingClientRect().width : 0;
+               let height = graphEl ? graphEl.getBoundingClientRect().height : 0;
 
 		const svg = forceGraph.append('svg').attr('width', width).attr('height', height);
 
@@ -339,17 +337,18 @@
 			svg.selectAll('.expanded-label').attr('transform', (d) => `translate(${d.x}, ${d.y})`);
 		});
 
-		window.addEventListener('resize', () => {
-			width = forceGraph.node().getBoundingClientRect().width;
-			height = forceGraph.node().getBoundingClientRect().height;
+               window.addEventListener('resize', () => {
+                       if (!graphEl) return;
+                       width = graphEl.getBoundingClientRect().width;
+                       height = graphEl.getBoundingClientRect().height;
 
-			svg.attr('width', width).attr('height', height);
-			simulation.force('center', d3.forceCenter(width / 2, height / 2));
-			simulation.alpha(1).restart();
-		});
+                       svg.attr('width', width).attr('height', height);
+                       simulation.force('center', d3.forceCenter(width / 2, height / 2));
+                       simulation.alpha(1).restart();
+               });
 	});
 </script>
 
-{@render children?.()}
+<slot />
 
 <div id={canvasID} class={classes.join(' ')}></div>

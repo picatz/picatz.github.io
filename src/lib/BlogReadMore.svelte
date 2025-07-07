@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { listBlogPosts } from '$lib/utils';
 	import { page } from '$app/state';
 	import { onMount } from 'svelte';

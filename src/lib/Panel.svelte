@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	/**
 	 * @typedef {Object} Props
 	 * @property {string} [icon]
