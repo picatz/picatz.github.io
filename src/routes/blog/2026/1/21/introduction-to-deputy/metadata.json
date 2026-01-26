@@ -1,0 +1,4 @@
+{
+    "title": "Introduction to Deputy",
+    "description": "Secure dependency management at scale: policies, scans, diffs, SBOMs, automated fixes, sandboxed exec, proxy, and plugins."
+}
